@@ -1,5 +1,6 @@
 package com.dryad.tomidaiapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -10,10 +11,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
     }
 
+    fun ButtonTapped(view: View){
+        val intent = Intent(this, SubActivity::class.java)
+        startActivities(arrayOf(intent))
+    }
 
 
 
