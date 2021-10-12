@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun ButtonTapped(view: View){
-        val intent = Intent(this, SubActivity::class.java)
+        val intent = Intent(this, MapsMainActivity::class.java)
         startActivities(arrayOf(intent))
     }
 
