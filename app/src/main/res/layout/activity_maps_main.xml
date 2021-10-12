@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapsMainActivity">
+
+    <Button
+        android:id="@+id/Gofuku"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onGofukuBtnTapped"
+        android:text="五福キャンパス周辺"
+        app:layout_constraintBottom_toTopOf="@+id/Sugitani"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Sugitani"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onSugitaniBtnTapped"
+        android:text="杉谷キャンパス周辺"
+        app:layout_constraintBottom_toTopOf="@+id/Takaoka"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Gofuku" />
+
+    <Button
+        android:id="@+id/Takaoka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onTakaokaBtnTapped"
+        android:text="高岡キャンパス周辺"
+        app:layout_constraintBottom_toTopOf="@+id/Floor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Sugitani" />
+
+    <Button
+        android:id="@+id/Floor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onFloorBtnTapped"
+        android:text="フロアマップ"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Takaoka" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
