@@ -28,13 +28,9 @@ package="com.dryad.tomidaiapp">
         android:name="com.google.android.geo.API_KEY"
         android:value="@string/google_maps_key" />
 
-    <activity
-        android:name=".MapsSugitaniActivity"
-        android:label="@string/title_activity_maps"></activity>
-    <activity
-        android:name=".MapsSugitaniActivity"
-        android:label="@string/title_activity_maps_sugitani" />
     <activity android:name=".MapsGofukuActivity" />
+    <activity android:name=".MapsSugitaniActivity" />
+    <activity android:name=".MapsTakaokaActivity" />
     <activity android:name=".MapsMainActivity" />
     <activity android:name=".SubActivity" />
     <activity android:name=".MainActivity">
