@@ -6,15 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-    <ImageView
-        android:id="@+id/imageView"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_marginTop="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/img_1756" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
         android:id="@+id/button"
@@ -26,7 +24,7 @@
         android:onClick="ButtonTapped"
         android:text="Button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/pager" />
 
     <Button
         android:id="@+id/button2"
@@ -38,7 +36,7 @@
         android:onClick="ButtonTapped"
         android:text="Button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/pager" />
 
     <Button
         android:id="@+id/button3"
@@ -50,7 +48,7 @@
         android:onClick="ButtonTapped"
         android:text="Button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/pager" />
 
     <Button
         android:id="@+id/button4"
@@ -62,6 +60,6 @@
         android:onClick="ButtonTapped"
         android:text="Button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/pager" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
