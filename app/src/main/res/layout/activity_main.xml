@@ -12,53 +12,61 @@
         android:layout_height="250dp"
         android:layout_marginTop="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/imageView1"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="50dp"
-        android:background="@drawable/circle_button"
+        android:background="@drawable/icon_timetable"
         android:onClick="ButtonTapped"
-        android:text="Button"
+        android:scaleType="centerInside"
+        android:text="時間割"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pager" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/imageView2"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="50dp"
-        android:background="@drawable/circle_button"
+        android:background="@drawable/icon_syllabus"
         android:onClick="ButtonTapped"
-        android:text="Button"
+        android:scaleType="centerInside"
+        android:text="シラバス"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pager" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/imageView3"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginLeft="270dp"
         android:layout_marginTop="50dp"
-        android:background="@drawable/circle_button"
+        android:background="@drawable/icon_map"
         android:onClick="ButtonTapped"
-        android:text="Button"
+        android:scaleType="centerInside"
+        android:text="キャンパスマップ"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pager" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/imageView4"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="180dp"
-        android:background="@drawable/circle_button"
-        android:onClick="ButtonTapped"
-        android:text="Button"
+        android:background="@drawable/icon_bus"
+        android:onClick="onBusBtnTapped"
+        android:scaleType="centerInside"
+        android:text="シャトルバス"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pager" />
 

@@ -6,20 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ScrollView
-        android:id="@+id/content"
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <View
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:layout_marginTop="50dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/img_1756" />
-
-    </ScrollView>
+        android:layout_height="250dp"
+        android:background="@drawable/img_1756"
+        android:clickable="true"
+        android:contentDescription="@string/img_description"
+        android:onClick="ButtonTapped"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/img_1756" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

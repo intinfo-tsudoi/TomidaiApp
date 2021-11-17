@@ -1,6 +1,7 @@
 package com.dryad.tomidaiapp
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -60,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                     ScreenSlidePageFragment()
                 }
                 1 -> {
-                    ScreenSlidePageFragment2()
+                    ScreenSlidePageFragment()
                 }
                 2 -> {
                     ScreenSlidePageFragment2()
@@ -74,5 +75,10 @@ class MainActivity : AppCompatActivity() {
     fun ButtonTapped(view: View){
         val intent = Intent(this, MapsMainActivity::class.java)
         startActivities(arrayOf(intent))
+    }
+
+    fun onBusBtnTapped(view: View?) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.u-toyama.ac.jp/studentsupport/student-support/shuttle_bus/"))
+        startActivity(intent)
     }
 }
