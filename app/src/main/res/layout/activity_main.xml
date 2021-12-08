@@ -70,4 +70,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pager" />
 
+    <Button
+        android:id="@+id/imageView5"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/icon_contact"
+        android:onClick="onContactBtnTapped"
+        android:scaleType="centerInside"
+        android:text="問い合わせ先"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pager" />
+
+    <Button
+        android:id="@+id/imageView6"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/icon_link"
+        android:onClick="onLinksBtnTapped"
+        android:scaleType="centerInside"
+        android:text="リンク集"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pager" />
 </androidx.constraintlayout.widget.ConstraintLayout>

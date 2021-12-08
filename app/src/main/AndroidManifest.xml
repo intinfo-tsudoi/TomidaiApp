@@ -16,7 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TomidaiApp">
-
+        <activity android:name=".LinksMainActivity"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -29,9 +29,12 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".ScreenSlidePageFragment2" tools:ignore="Instantiatable" />
-        <activity android:name=".ScreenSlidePageFragment" tools:ignore="Instantiatable"/>
-        <!--ignore="Instantiatable must extends android.app.Activityの回避-->
+        <activity
+            android:name=".ScreenSlidePageFragment2"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".ScreenSlidePageFragment"
+            tools:ignore="Instantiatable" /> <!-- ignore="Instantiatable must extends android.app.Activityの回避 -->
         <activity android:name=".MapsGofukuActivity" />
         <activity android:name=".MapsSugitaniActivity" />
         <activity android:name=".MapsTakaokaActivity" />

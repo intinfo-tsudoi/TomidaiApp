@@ -1,15 +1,23 @@
 package com.dryad.tomidaiapp
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import java.time.LocalDate
 
 /**
  * The number of pages (wizard steps) to show in this demo.
@@ -24,6 +32,7 @@ class MainActivity : AppCompatActivity() {
      */
     private lateinit var viewPager: ViewPager2
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -34,6 +43,33 @@ class MainActivity : AppCompatActivity() {
         // The pager adapter, which provides the pages to the view pager widget.
         val pagerAdapter = ScreenSlidePagerAdapter(this)
         viewPager.adapter = pagerAdapter
+
+        val channelId = "NOTIFICATION_CHANNEL_ID"
+        val channelName = "NOTIFICATION_CHANNEL_NAME"
+        val channelDescription = "NOTIFICATION_CHANNEL_DESCRIPTION"
+
+        //Android 8.0 以上ではアプリの通知チャンネルを登録することが必要。
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val importance = NotificationManager.IMPORTANCE_DEFAULT //---*1
+            val channel = NotificationChannel(channelId, channelName, importance).apply {
+                description = channelDescription
+            }
+            val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            manager.createNotificationChannel(channel)
+        }
+
+        //日付の取得。
+        val date = LocalDate.now()
+
+        //通知をシステムに登録しています。
+        var builder = NotificationCompat.Builder(this, channelId)
+            .setSmallIcon(R.drawable.notification_icon)
+            .setContentTitle("今日は")
+            .setContentText(date.toString()+"です。")
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+
+        val id = 0 //---*4
+        NotificationManagerCompat.from(this).notify(id, builder.build())
     }
 
     override fun onBackPressed() {
@@ -80,5 +116,15 @@ class MainActivity : AppCompatActivity() {
     fun onBusBtnTapped(view: View?) {
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.u-toyama.ac.jp/studentsupport/student-support/shuttle_bus/"))
         startActivity(intent)
+    }
+
+    fun onContactBtnTapped(view: View?) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.u-toyama.ac.jp/wp/wp-content/uploads/campusguide_cg02.pdf"))
+        startActivity(intent)
+    }
+
+    fun onLinksBtnTapped(view: View){
+        val intent = Intent(this, LinksMainActivity::class.java)
+        startActivities(arrayOf(intent))
     }
 }
