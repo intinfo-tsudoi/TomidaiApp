@@ -15,6 +15,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import androidx.room.Room
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import java.time.LocalDate
@@ -70,6 +71,7 @@ class MainActivity : AppCompatActivity() {
 
         val id = 0 //---*4
         NotificationManagerCompat.from(this).notify(id, builder.build())
+
     }
 
     override fun onBackPressed() {
@@ -125,6 +127,11 @@ class MainActivity : AppCompatActivity() {
 
     fun onLinksBtnTapped(view: View){
         val intent = Intent(this, LinksMainActivity::class.java)
+        startActivities(arrayOf(intent))
+    }
+
+    fun onTestBtnTapped(view: View){
+        val intent = Intent(this, ViewData::class.java)
         startActivities(arrayOf(intent))
     }
 }
