@@ -19,4 +19,13 @@
         <item name="android:windowContentOverlay">@null</item>
         <!--タイトルバー削除　ここまで-->
     </style>
+
+    <style name="Theme.TomidaiApp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.TomidaiApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.TomidaiApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

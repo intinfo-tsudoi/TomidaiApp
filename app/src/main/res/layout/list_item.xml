@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginLeft="16dp">
+
+        <TextView
+            android:id="@+id/classname"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/teacher"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/classcategory"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/classtype"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/coc"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/period"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/faculty"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/classregicode"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/grade"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/classnumcode"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/credit"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/latestupdate"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/officehours"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/rtadvice"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/objective"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/edugoals"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/goals"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/schedule"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/studyoutside"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/keywords"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/notice"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/evaluation"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/textbooks"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/related"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/link"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/notes"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
