@@ -16,7 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TomidaiApp">
-        <activity android:name=".LinksMainActivity"></activity>
+        <activity android:name=".TimetableActivity"></activity>
+        <activity android:name=".TimetableRegistrationActivity" />
+        <activity android:name=".LinksMainActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
