@@ -108,6 +108,11 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
+    fun onTimetableBtnTapped(view: View){
+        val intent = Intent(this, TimetableActivity::class.java)
+        startActivities(arrayOf(intent))
+    }
+
     fun ButtonTapped(view: View){
         val intent = Intent(this, MapsMainActivity::class.java)
         startActivities(arrayOf(intent))
@@ -115,6 +120,11 @@ class MainActivity : AppCompatActivity() {
 
     fun onBusBtnTapped(view: View?) {
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.u-toyama.ac.jp/studentsupport/student-support/shuttle_bus/"))
+        startActivity(intent)
+    }
+
+    fun onSettingBtnTapped(view: View?) {
+        val intent = Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + BuildConfig.APPLICATION_ID))
         startActivity(intent)
     }
 
