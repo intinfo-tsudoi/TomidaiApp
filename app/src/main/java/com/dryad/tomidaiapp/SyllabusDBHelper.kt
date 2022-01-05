@@ -12,7 +12,7 @@ class SyllabusDBHelper
     private val serialVersionUID = 1L
     private val DB_FILE_NAME = "SBSyllabus.db" //assetsにあるDBファイル名
 
-    private val DB_NAME = "Syllabus.db" //androidが使うDBファイル名
+    private val DB_NAME = "Syllabus" //androidが使うDBファイル名
 
     private val DB_VERSION = 1
     private var context: Context? = null
@@ -20,7 +20,7 @@ class SyllabusDBHelper
     private var databaseExist = true //適切なDBファイルが存在するか
 
 
-    fun DatabaseOpenHelper(context: Context) {
+    fun DatabaseHelper(context: Context) {
         this.context = context
         dbPath = context.getDatabasePath(DB_NAME)
         println(dbPath)

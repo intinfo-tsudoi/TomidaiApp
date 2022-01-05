@@ -131,7 +131,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onTestBtnTapped(view: View){
-        val intent = Intent(this, ViewData::class.java)
+        val intent = Intent(this, SubActivity::class.java)
         startActivities(arrayOf(intent))
     }
 }
