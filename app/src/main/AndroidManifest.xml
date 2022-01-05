@@ -24,11 +24,6 @@
             android:exported="false"
             android:label="@string/title_activity_view_data"
             android:theme="@style/Theme.TomidaiApp.NoActionBar" />
-        <activity
-            android:name=".View"
-            android:exported="false"
-            android:label="@string/title_activity_view"
-            android:theme="@style/Theme.TomidaiApp.NoActionBar" />
         <activity android:name=".LinksMainActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
