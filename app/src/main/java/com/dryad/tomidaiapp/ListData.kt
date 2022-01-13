@@ -3,8 +3,16 @@ package com.dryad.tomidaiapp
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
+import android.os.Handler
+import android.util.Log
 import android.widget.ListView
+import kotlinx.android.synthetic.main.activity_list_data.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import android.os.Looper
+
+
+
 
 class ListData : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,15 +25,13 @@ class ListData : AppCompatActivity() {
         println("kokomadekitayo")
     }
 
-    lateinit var mCustomAdapter: CustomAdapter
-    lateinit var mSyllabusList: ArrayList<Syllabus>
-
     var getdata = ""
 
     override fun onStart() {
         super.onStart()
 
-        onShow()
+        //onShow()
+        //onResumeでも呼び出すのでいらない
     }
 
     override fun onResume() {
@@ -36,61 +42,70 @@ class ListData : AppCompatActivity() {
 
     @SuppressLint("Range")
     fun onShow() {
-        val dbHelper = SyllabusDBHelper(applicationContext, "DBSyllabus", null, 1)
-        val db = dbHelper.readableDatabase
-
-        val cursor = db.rawQuery(
-            "SELECT * FROM Syllabus_tbl WHERE " + DBContract.DBSyllabus.C_classregicode + "= ?",
-            arrayOf(getdata)
-        )
-
-        println(cursor.columnCount)
-        println(cursor.position)
-        if(!cursor.moveToFirst()){
-            println("moveToFirst="+ cursor.moveToFirst() +"：データがないよ")
-            finish()
-            return
-        }
-        println("moveToFirst="+ cursor.moveToFirst())
-        println(cursor.position)
-        //println(cursor.getColumnIndex(DBContract.DBSyllabus.C_classname))
-        //println(cursor.getString(2))
-
-
-        val syllabusData = Syllabus(
-            classname = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_classname)),
-            teacher = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_teacher)),
-            classcategory = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_classcategory)),
-            classtype = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_classtype)),
-            coc = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_coc)),
-            period = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_period)),
-            faculty = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_faculty)),
-            classregicode = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_classregicode)),
-            grade = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_grade)),
-            classnumcode = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_classnumcode)),
-            credit = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_credit)),
-            latestupdate = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_latestupdate)),
-            officehours = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_officehours)),
-            rtadvice = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_rtadvice)),
-            objective = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_objective)),
-            edugoals = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_edugoals)),
-            goals = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_goals)),
-            schedule = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_schedule)),
-            studyoutside = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_studyoutside)),
-            keywords = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_keywords)),
-            notice = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_notice)),
-            evaluation = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_evaluation)),
-            textbooks = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_textbooks)),
-            related = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_related)),
-            link = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_link)),
-            notes = cursor.getString(cursor.getColumnIndex(DBContract.DBSyllabus.C_notes))
-        )
-
-        //println(syllabusData.classname)
-
-        mSyllabusList = arrayListOf(syllabusData)
+        /**コルーチンの中にどこまで入れるか要注意**/
+        var mainHandler: Handler? = Handler(Looper.getMainLooper())
         val listView = findViewById<ListView>(R.id.listView_syllabus)
-        println(mSyllabusList)
+        var syllabusData: Syllabus
+        var mCustomAdapter: CustomAdapter
+        var mSyllabusList: ArrayList<Syllabus> = arrayListOf()
+        val launch = GlobalScope.launch {
+            val searched: Array<DataBase> = AppDatabase.getDatabase(applicationContext).DataBaseDao().SerachByClassregicode(getdata)
+            val searchedList = searched.toList()
+            println(searched)
+            println(searched.size)
+            if(searched.isEmpty()){
+                Log.d("ListData", "検索結果がありません" )
+            }else {
+                Log.d("ListData", "${searched[0]}")
+                for (i in searched) {
+                    println(i)
+                    /**ゴリ押しでカスタムアダプターへ**/
+                    syllabusData = Syllabus(
+                        classname = i.classname,
+                        teacher = i.teacher,
+                        classcategory = i.classcategory,
+                        classtype = i.classtype,
+                        coc = i.coc,
+                        period = i.period,
+                        faculty = i.faculty,
+                        classregicode = i.classregicode,
+                        grade = i.grade,
+                        classnumcode = i.classnumcode,
+                        credit = i.credit,
+                        latestupdate = i.latestupdate,
+                        officehours = i.officehours,
+                        rtadvice = i.rtadvice,
+                        objective = i.objective,
+                        edugoals = i.edugoals,
+                        goals = i.goals,
+                        schedule = i.schedule,
+                        studyoutside = i.studyoutside,
+                        keywords = i.keywords,
+                        notice = i.notice,
+                        evaluation = i.evaluation,
+                        textbooks = i.textbooks,
+                        related = i.related,
+                        link = i.link,
+                        notes = i.notes
+                    )
+                    mSyllabusList = arrayListOf(syllabusData)
+                }
+            }
+            println(mSyllabusList)
+            // adapterを作成します
+            mCustomAdapter = CustomAdapter(
+                applicationContext, mSyllabusList
+            )
+
+            // adapterをlistViewに紐付けます。
+            // メインスレッド外でUIはいじれないのでハンドラーで処理するよ
+            println(mCustomAdapter)
+            mainHandler!!.post { listView_syllabus.adapter = mCustomAdapter }
+
+        }
+
+        println("コルーチン外")
+        /*println(mSyllabusList)
         // adapterを作成します
         mCustomAdapter = CustomAdapter(
             this, mSyllabusList
@@ -99,10 +114,9 @@ class ListData : AppCompatActivity() {
         println(mCustomAdapter)
 
         // adapterをlistViewに紐付けます。
-        listView.adapter = mCustomAdapter
-
-        cursor.close()
-
+        listView_syllabus.adapter = mCustomAdapter
+*/
+        /**カスタムアダプターはコルーチン外のほうが都合よさそう**/
     }
 
 

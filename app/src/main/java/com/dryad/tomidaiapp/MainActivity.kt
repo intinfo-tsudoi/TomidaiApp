@@ -9,13 +9,11 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import androidx.room.Room
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import java.time.LocalDate
@@ -141,7 +139,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onTestBtnTapped(view: View){
-        val intent = Intent(this, SubActivity::class.java)
+        val intent = Intent(this, SearchData::class.java)
         startActivities(arrayOf(intent))
     }
 }
