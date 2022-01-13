@@ -1,15 +1,13 @@
 package com.dryad.tomidaiapp
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.ImageView
 import android.widget.TextView
 
-class CustomAdapter(context: Context, var mSyllabusList: List<Syllabus>) : ArrayAdapter<Syllabus>(context, 0, mSyllabusList) {
+class CustomAdapter(context: Context, var mSyllabusList: ArrayList<Syllabus>) : ArrayAdapter<Syllabus>(context, 0, mSyllabusList) {
 
     private val layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 

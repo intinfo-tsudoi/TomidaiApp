@@ -6,5 +6,5 @@
     <item name="imageView3" type="id" />
     <item name="imageView4" type="id" />
 
-    <item name="edit_text" type="id"/>
+    <item name="input_to_search" type="id"/>
 </resources>
