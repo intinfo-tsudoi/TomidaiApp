@@ -15,6 +15,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="100dp"
         android:hint="000000"
+        android:maxLength="6"
         android:importantForAutofill="no"
         android:inputType="number"
         android:singleLine="true"
