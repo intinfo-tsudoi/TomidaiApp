@@ -27,4 +27,10 @@ data class Syllabus(
     var related: String? = null,
     var link: String? = null,
     var notes: String? = null
-) {}
+)
+
+data class SylalbusforRegist(
+    var classname: String? = null,
+    var teacher: String? = null,
+    var period: String? = null,
+)
