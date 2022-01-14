@@ -15,7 +15,7 @@ class TimetableRegistrationActivity : AppCompatActivity() {
         setContentView(R.layout.activity_timetable_registration)
 
         // Spinnerの取得
-        val spinner = findViewById<Spinner>(R.id.spinner)
+        val spinner = findViewById<Spinner>(R.id.spinner1)
         val spinner2 = findViewById<Spinner>(R.id.spinner2)
 
         // Adapterの生成

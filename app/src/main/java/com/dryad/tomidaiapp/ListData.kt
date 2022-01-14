@@ -17,12 +17,12 @@ import android.os.Looper
 class ListData : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        println("kokomadekitayo")
+        //println("kokomadekitayo")
         setContentView(R.layout.activity_list_data)
         val intent = intent
         getdata = intent.getStringExtra("SEND_DATA").toString()
         println(getdata)
-        println("kokomadekitayo")
+        //println("kokomadekitayo")
     }
 
     var getdata = ""

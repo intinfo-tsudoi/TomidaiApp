@@ -16,4 +16,29 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_view">View</string>
+
+    /*時間割登録フォーム*/
+    <string name="formname_subjectcode">時間割コード</string>
+    <string name="formname_subjectname">科目名</string>
+    <string name="formname_teacher">教員名</string>
+    <string name="formname_date">曜日・時間</string>
+    <string name="formname_room">教室</string>
+    <string-array name="day_list">
+        <item>曜日</item>>
+        <item>月</item>
+        <item>火</item>
+        <item>水</item>
+        <item>木</item>
+        <item>金</item>
+    </string-array>
+    <string-array name="time_list">
+        <item>時限</item>
+        <item>１限</item>
+        <item>２限</item>
+        <item>３限</item>
+        <item>４限</item>
+        <item>５限</item>
+        <item>６限</item>
+        <item>７限</item>
+    </string-array>
 </resources>
