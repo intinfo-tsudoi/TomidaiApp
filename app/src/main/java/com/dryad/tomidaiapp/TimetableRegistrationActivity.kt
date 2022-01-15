@@ -33,44 +33,59 @@ class TimetableRegistrationActivity : AppCompatActivity() {
     }
 
     fun SearchButtonTapped(view: View){
-        val search_code = editText_classregicode.text.toString()
+        val text_classregicode = editText_classregicode.text.toString()
         var flag: Int = 0
-        Log.d("Searched", "$search_code")
-        var searchedData: SylalbusforRegist? = null
-        val launch = runBlocking {
-            var mainHandler: Handler? = Handler(Looper.getMainLooper())
-            val searched: Array<SylalbusforRegist> =
-                AppDatabase.getDatabase(applicationContext).DataBaseDao()
-                    .SearchDataForRegistration(search_code)
-            println(searched[0])
-            println(searched.size)
-            if (searched.isEmpty()) {
-                Log.d("Coroutine", "NoData")
-                flag = 1
-            } else if (searched.size > 1) {
-                Log.d("Coroutine", "検索結果が複数あります")
-                mainHandler!!.post {
-                    editText_classname.setText(searched[0].classname, TextView.BufferType.NORMAL)
-                    editText_teacher.setText(searched[0].teacher, TextView.BufferType.NORMAL)
+        Log.d("Searched", "$text_classregicode")
+        if(text_classregicode.length == 6) {
+            var searchedData: SylalbusforRegist? = null
+            //コルーチンだけど他のスレッドブロックするよ
+            val launch = runBlocking {
+                var mainHandler: Handler? = Handler(Looper.getMainLooper())
+                val searched: Array<SylalbusforRegist> =
+                    AppDatabase.getDatabase(applicationContext).DataBaseDao()
+                        .SearchDataForRegistration(text_classregicode)
+                if (searched.isEmpty()) {
+                    Log.d("Coroutine", "NoData")
+                    flag = 1
+                } else if (searched.size > 1) {
+                    Log.d("Coroutine", "検索結果が複数あります")
+                    println(searched[0])
+                    println(searched.size)
+                    mainHandler!!.post {
+                        editText_classname.setText(
+                            searched[0].classname,
+                            TextView.BufferType.NORMAL
+                        )
+                        editText_teacher.setText(searched[0].teacher, TextView.BufferType.NORMAL)
+                    }
+                    flag = 1
+                } else {
+                    Log.d("Coroutine", "正常に検索されました")
+                    println(searched[0])
+                    println(searched.size)
+                    mainHandler!!.post {
+                        editText_classname.setText(
+                            searched[0].classname,
+                            TextView.BufferType.NORMAL
+                        )
+                        editText_teacher.setText(searched[0].teacher, TextView.BufferType.NORMAL)
+                    }
+                    flag = 1
                 }
-                flag = 1
-            } else {
-                Log.d("Coroutine", "正常に検索されました")
-                mainHandler!!.post {
-                    editText_classname.setText(searched[0].classname, TextView.BufferType.NORMAL)
-                    editText_teacher.setText(searched[0].teacher, TextView.BufferType.NORMAL)
-                }
-                flag = 1
             }
         }
-
-    }
-
-    class searchThread: Thread(){
-
     }
 
     fun TourokuButtonTapped(view: View){
-
+        val text_classregicode = editText_classregicode.text.toString()
+        val text_classname = editText_classname.text.toString()
+        val text_teacher = editText_teacher.text.toString()
+        val text_classroom = editText_classroom.text.toString()
     }
+
+    fun onBackPressed(view: View) {
+        super.onBackPressed()
+    }
+
+
 }
