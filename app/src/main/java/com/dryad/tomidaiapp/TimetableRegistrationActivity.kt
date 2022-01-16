@@ -6,7 +6,6 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.view.View
-import android.widget.EditText
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_timetable_registration.*
 import kotlinx.coroutines.runBlocking
@@ -22,15 +21,12 @@ class TimetableRegistrationActivity : AppCompatActivity() {
         getdata = intent.getStringExtra("id").toString()
         println(getdata)
 
-        var date: String? = null
-        var time: String? = null
+        var date: String?
+        var time: String?
         var date_str: String? = null
-        var datetime_str: String? = null
-        //getdataへの処理
-        if(getdata!=null) {
-            date = getdata.substring(0, 3)
-            time = getdata.substring(3)
-        }
+        /* getdataへの処理 */
+        date = getdata.substring(0, 3)
+        time = getdata.substring(3)
         println(date)
         println(time)
 
@@ -46,34 +42,28 @@ class TimetableRegistrationActivity : AppCompatActivity() {
             date_str = "金曜"
         }
 
-        datetime_str = date_str+time+"限"
+        var datetime_str = date_str+time+"限"
 
         println(datetime_str)
 
+        var set_str = "登録する時間：$datetime_str"
+
         var datetime_text = findViewById<TextView>(R.id.textView_date_time_timetableRegist)
-        datetime_text.text = "登録する時間：$datetime_str"
+        datetime_text.text = set_str
 
         // Spinnerの取得
         //val spinner = findViewById<Spinner>(R.id.spinner1)
         //val spinner2 = findViewById<Spinner>(R.id.spinner2)
 
-        // 各EditTextの取得
-        var edit_Classregicode = findViewById<EditText>(R.id.editText_classregicode)
-        var edit_Classname = findViewById<EditText>(R.id.editText_classname)
-        var edit_Teacher = findViewById<EditText>(R.id.editText_teacher)
-        var edit_classroom = findViewById<EditText>(R.id.editText_classroom)
-        var edit_memo = findViewById<EditText>(R.id.editText_memo)
     }
 
     fun SearchButtonTapped(view: View){
         val text_classregicode = editText_classregicode.text.toString()
-        var flag: Int = 0
-        Log.d("Searched", "$text_classregicode")
+        Log.d("Searched", text_classregicode)
         if(text_classregicode.length == 6) {
-            var searchedData: SylalbusforRegist? = null
             //コルーチンだけど他のスレッドブロックするよ
             val launch = runBlocking {
-                var mainHandler: Handler? = Handler(Looper.getMainLooper())
+                val mainHandler = Handler(Looper.getMainLooper())
                 val searched: Array<SylalbusforRegist> =
                     AppDatabase.getDatabase_sy(applicationContext).DataBaseDao_sy()
                         .SearchDataForRegistration(text_classregicode)
@@ -83,7 +73,7 @@ class TimetableRegistrationActivity : AppCompatActivity() {
                     Log.d("Coroutine", "検索結果が複数あります")
                     println(searched[0])
                     println(searched.size)
-                    mainHandler!!.post {
+                    mainHandler.post {
                         editText_classname.setText(
                             searched[0].classname,
                             TextView.BufferType.NORMAL
@@ -94,7 +84,7 @@ class TimetableRegistrationActivity : AppCompatActivity() {
                     Log.d("Coroutine", "正常に検索されました")
                     println(searched[0])
                     println(searched.size)
-                    mainHandler!!.post {
+                    mainHandler.post {
                         editText_classname.setText(
                             searched[0].classname,
                             TextView.BufferType.NORMAL
