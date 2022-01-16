@@ -11,7 +11,7 @@ class SubActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sub)
         val launch = GlobalScope.launch {
-            AppDatabase.getDatabase(applicationContext).DataBaseDao().getAll().forEach {
+            AppDatabase.getDatabase_sy(applicationContext).DataBaseDao_sy().getAll().forEach {
                 Log.d("MainActivity", "${it.id}")
                 /*ログに授業名吐き出すよ*/
             }

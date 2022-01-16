@@ -5,7 +5,7 @@ import androidx.room.Insert
 import androidx.room.Query
 
 @Dao
-interface DataBaseDao{
+interface DataBaseDao_sy{
     @Insert
     suspend fun insertAll(syllabus: List<SyllabusDatabase>)
     @Query("SELECT * FROM syllabus_tbl")
