@@ -49,7 +49,7 @@ class ListData : AppCompatActivity() {
         var mCustomAdapter: CustomAdapter
         var mSyllabusList: ArrayList<Syllabus> = arrayListOf()
         val launch = GlobalScope.launch {
-            val searched: Array<DataBase> = AppDatabase.getDatabase(applicationContext).DataBaseDao().SerachByClassregicode(getdata)
+            val searched: Array<SyllabusDatabase> = AppDatabase.getDatabase(applicationContext).DataBaseDao().SerachByClassregicode(getdata)
             println(searched)
             println(searched.size)
             if(searched.isEmpty()){

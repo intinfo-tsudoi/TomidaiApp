@@ -62,6 +62,7 @@
                 android:text="1\n限\n目" />
 
             <Button
+                android:id="@+id/Mon1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -69,27 +70,35 @@
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Tue1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Wed1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Thu1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Fri1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
         </TableRow>
 
@@ -104,33 +113,43 @@
                 android:text="2\n限\n目" />
 
             <Button
+                android:id="@+id/Mon2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Tue2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Wed2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Thu2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Fri2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
         </TableRow>
 
@@ -145,33 +164,43 @@
                 android:text="3\n限\n目" />
 
             <Button
+                android:id="@+id/Mon3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Tue3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Wed3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Thu3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Fri3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
         </TableRow>
 
@@ -186,33 +215,43 @@
                 android:text="4\n限\n目" />
 
             <Button
+                android:id="@+id/Mon4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Tue4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Wed4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Thu4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Fri4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
         </TableRow>
 
@@ -227,33 +266,43 @@
                 android:text="5\n限\n目" />
 
             <Button
+                android:id="@+id/Mon5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Tue5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Wed5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Thu5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Fri5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
         </TableRow>
 
@@ -268,33 +317,43 @@
                 android:text="6\n限\n目" />
 
             <Button
+                android:id="@+id/Mon6"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Tue6"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Wed6"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Thu6"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Fri6"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
         </TableRow>
 
@@ -309,33 +368,43 @@
                 android:text="7\n限\n目" />
 
             <Button
+                android:id="@+id/Mon7"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Tue7"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Wed7"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Thu7"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
 
             <Button
+                android:id="@+id/Fri7"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="ButtonTapped"
                 android:text="未登録" />
         </TableRow>
 

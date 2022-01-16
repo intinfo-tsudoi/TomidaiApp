@@ -7,12 +7,8 @@ import android.os.Looper
 import android.util.Log
 import android.view.View
 import android.widget.EditText
-import android.widget.Spinner
 import android.widget.TextView
-import kotlinx.android.synthetic.main.activity_list_data.*
 import kotlinx.android.synthetic.main.activity_timetable_registration.*
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 class TimetableRegistrationActivity : AppCompatActivity() {
@@ -20,10 +16,44 @@ class TimetableRegistrationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timetable_registration)
+        val intent = intent
+        val getdata = intent.getStringExtra("id")
+        println(getdata)
+
+        var date: String? = null
+        var time: String? = null
+        var date_str: String? = null
+        var datetime_str: String? = null
+        //getdataへの処理
+        if(getdata!=null) {
+            date = getdata.substring(0, 3)
+            time = getdata.substring(3)
+        }
+        println(date)
+        println(time)
+
+        if(date == "Mon"){
+            date_str = "月曜"
+        }else if(date == "Tue"){
+            date_str = "火曜"
+        }else if(date == "Wed"){
+            date_str = "水曜"
+        }else if(date == "Thu"){
+            date_str = "木曜"
+        }else if(date == "Fri"){
+            date_str = "金曜"
+        }
+
+        datetime_str = date_str+time+"限"
+
+        println(datetime_str)
+
+        var datetime_text = findViewById<TextView>(R.id.textView_date_time_timetableRegist)
+        datetime_text.text = "登録する時間：$datetime_str"
 
         // Spinnerの取得
-        val spinner = findViewById<Spinner>(R.id.spinner1)
-        val spinner2 = findViewById<Spinner>(R.id.spinner2)
+        //val spinner = findViewById<Spinner>(R.id.spinner1)
+        //val spinner2 = findViewById<Spinner>(R.id.spinner2)
 
         // 各EditTextの取得
         var edit_Classregicode = findViewById<EditText>(R.id.editText_classregicode)
@@ -81,6 +111,7 @@ class TimetableRegistrationActivity : AppCompatActivity() {
         val text_classname = editText_classname.text.toString()
         val text_teacher = editText_teacher.text.toString()
         val text_classroom = editText_classroom.text.toString()
+
     }
 
     fun onBackPressed(view: View) {

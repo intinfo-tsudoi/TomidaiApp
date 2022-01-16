@@ -7,4 +7,42 @@
     <item name="imageView4" type="id" />
 
     <item name="input_to_search" type="id"/>
+
+
+    <item name="Mon1" type="id"/>
+    <item name="Mon2" type="id"/>
+    <item name="Mon3" type="id"/>
+    <item name="Mon4" type="id"/>
+    <item name="Mon5" type="id"/>
+    <item name="Mon6" type="id"/>
+    <item name="Mon7" type="id"/>
+    <item name="Tue1" type="id"/>
+    <item name="Tue2" type="id"/>
+    <item name="Tue3" type="id"/>
+    <item name="Tue4" type="id"/>
+    <item name="Tue5" type="id"/>
+    <item name="Tue6" type="id"/>
+    <item name="Tue7" type="id"/>
+    <item name="Wed1" type="id"/>
+    <item name="Wed2" type="id"/>
+    <item name="Wed3" type="id"/>
+    <item name="Wed4" type="id"/>
+    <item name="Wed5" type="id"/>
+    <item name="Wed6" type="id"/>
+    <item name="Wed7" type="id"/>
+    <item name="Thu1" type="id"/>
+    <item name="Thu2" type="id"/>
+    <item name="Thu3" type="id"/>
+    <item name="Thu4" type="id"/>
+    <item name="Thu5" type="id"/>
+    <item name="Thu6" type="id"/>
+    <item name="Thu7" type="id"/>
+    <item name="Fri1" type="id"/>
+    <item name="Fri2" type="id"/>
+    <item name="Fri3" type="id"/>
+    <item name="Fri4" type="id"/>
+    <item name="Fri5" type="id"/>
+    <item name="Fri6" type="id"/>
+    <item name="Fri7" type="id"/>
+
 </resources>
