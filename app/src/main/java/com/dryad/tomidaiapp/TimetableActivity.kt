@@ -7,6 +7,8 @@ import android.util.Log
 import android.view.View
 import androidx.core.content.ContextCompat.startActivities
 import kotlinx.android.synthetic.main.activity_search_data.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.BufferedReader
@@ -20,23 +22,12 @@ class TimetableActivity : AppCompatActivity() {
     }
 
     fun setTimeTable(){
-        val assetManager = resources.assets
-        val inputStream = assetManager.open("empty_timetable.json")
-        val bufferedReader = BufferedReader(InputStreamReader(inputStream))
-        val str: String = bufferedReader.readText()
-        Log.d("check", str)
-        try {
-            val jsonObject = JSONObject(str)
-            val jsonArray = jsonObject.getJSONArray("timetable")
-            for (i in 0 until jsonArray.length()) {
-                val jsonData = jsonArray.getJSONObject(i)
-
-                Log.d("Check", "$i : ${jsonData.getString("classname")}")
+        val launch = GlobalScope.launch {
+            AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt().getAll().forEach {
+                Log.d("MainActivity", "${it.date_time}${it.classname}")
+                /*ログに授業名吐き出すよ*/
             }
-        } catch (e: JSONException) {
-            e.printStackTrace()
         }
-        
     }
 
     fun ButtonTapped(view: View){

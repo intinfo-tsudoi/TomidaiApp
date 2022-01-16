@@ -13,11 +13,13 @@ import kotlinx.coroutines.runBlocking
 
 class TimetableRegistrationActivity : AppCompatActivity() {
 
+    var getdata: String = "000000"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timetable_registration)
         val intent = intent
-        val getdata = intent.getStringExtra("id")
+        getdata = intent.getStringExtra("id").toString()
         println(getdata)
 
         var date: String? = null
@@ -60,6 +62,7 @@ class TimetableRegistrationActivity : AppCompatActivity() {
         var edit_Classname = findViewById<EditText>(R.id.editText_classname)
         var edit_Teacher = findViewById<EditText>(R.id.editText_teacher)
         var edit_classroom = findViewById<EditText>(R.id.editText_classroom)
+        var edit_memo = findViewById<EditText>(R.id.editText_memo)
     }
 
     fun SearchButtonTapped(view: View){
@@ -72,11 +75,10 @@ class TimetableRegistrationActivity : AppCompatActivity() {
             val launch = runBlocking {
                 var mainHandler: Handler? = Handler(Looper.getMainLooper())
                 val searched: Array<SylalbusforRegist> =
-                    AppDatabase.getDatabase(applicationContext).DataBaseDao()
+                    AppDatabase.getDatabase_sy(applicationContext).DataBaseDao_sy()
                         .SearchDataForRegistration(text_classregicode)
                 if (searched.isEmpty()) {
                     Log.d("Coroutine", "NoData")
-                    flag = 1
                 } else if (searched.size > 1) {
                     Log.d("Coroutine", "検索結果が複数あります")
                     println(searched[0])
@@ -88,7 +90,6 @@ class TimetableRegistrationActivity : AppCompatActivity() {
                         )
                         editText_teacher.setText(searched[0].teacher, TextView.BufferType.NORMAL)
                     }
-                    flag = 1
                 } else {
                     Log.d("Coroutine", "正常に検索されました")
                     println(searched[0])
@@ -100,7 +101,6 @@ class TimetableRegistrationActivity : AppCompatActivity() {
                         )
                         editText_teacher.setText(searched[0].teacher, TextView.BufferType.NORMAL)
                     }
-                    flag = 1
                 }
             }
         }
@@ -111,7 +111,21 @@ class TimetableRegistrationActivity : AppCompatActivity() {
         val text_classname = editText_classname.text.toString()
         val text_teacher = editText_teacher.text.toString()
         val text_classroom = editText_classroom.text.toString()
-
+        val text_memo = editText_memo.text.toString()
+        val launch = runBlocking {
+            println(getdata)
+            val result = AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt()
+                .updateTimetable(
+                    getdata,
+                    text_classname,
+                    text_teacher,
+                    text_classregicode,
+                    text_classroom,
+                    text_memo
+                )
+            println("clear")
+            Log.d("result", "$result")//1だったら適切に１列更新できているはず
+        }
     }
 
     fun onBackPressed(view: View) {
