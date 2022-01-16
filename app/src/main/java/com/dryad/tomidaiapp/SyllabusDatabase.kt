@@ -6,7 +6,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "Syllabus_tbl")
-data class DataBase(
+data class SyllabusDatabase(
     @PrimaryKey
     @ColumnInfo(name = "id") val id: Int?,
     @ColumnInfo(name = "classname", typeAffinity = TEXT) val classname: String?,

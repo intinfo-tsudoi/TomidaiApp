@@ -1,19 +1,17 @@
 package com.dryad.tomidaiapp
 
-import android.provider.ContactsContract
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 
 @Dao
-interface DataBaseDao {
+interface DataBaseDao{
     @Insert
-    suspend fun insertAll(syllabus: List<DataBase>)
+    suspend fun insertAll(syllabus: List<SyllabusDatabase>)
     @Query("SELECT * FROM syllabus_tbl")
-    suspend fun getAll(): List<DataBase>
+    suspend fun getAll(): List<SyllabusDatabase>
     @Query("SELECT * FROM syllabus_tbl WHERE classregicode = :regicode")
-    suspend fun SerachByClassregicode(regicode: String): Array<DataBase>
+    suspend fun SerachByClassregicode(regicode: String): Array<SyllabusDatabase>
     @Query("SELECT classname, teacher, period FROM syllabus_tbl WHERE classregicode = :regicode")
     suspend fun SearchDataForRegistration(regicode: String): Array<SylalbusforRegist>
 }
