@@ -61,9 +61,11 @@ abstract class AppDatabase: RoomDatabase() {
 
 val MIGRATION_1_2 = object : Migration(1, 2) {
     override fun migrate(database: SupportSQLiteDatabase) {
-        database.execSQL("CREATE TABLE Syllabus_tbl(" +
-                " id INTEGER PRIMARY KEY, classname TEXT, classname_jp TEXT, classname_en TEXT, teacher TEXT, classcategory TEXT, classtype TEXT, coc TEXT, period TEXT, faculty TEXT, classregicode TEXT, grade TEXT, classnumcode TEXT, credit TEXT, latestupdate TEXT, officehours TEXT, rtadvice TEXT, objective TEXT, edugoals TEXT, goals TEXT, schedule TEXT, studyoutside TEXT, keywords TEXT, notice TEXT, evaluation TEXT, textbooks TEXT, related TEXT, link TEXT, notes TEXT)")
-        database.execSQL("CREATE TABLE Timetable_tbl(" +
-                " id INTEGER PRIMARY KEY, date_time TEXT, classname TEXT, classname_jp TEXT, classname_en TEXT, teacher TEXT, classregicode TEXT, classroom TEXT, memo TEXT)")
+        database.execSQL("ALTER TABLE Syllabus_tbl add classname_jp TEXT DEFAULT null;")
+        database.execSQL("ALTER TABLE Syllabus_tbl add classname_en TEXT DEFAULT null;")
+
+        database.execSQL("ALTER TABLE Timetable_tbl add classname_jp TEXT DEFAULT null;")
+        database.execSQL("ALTER TABLE Timetable_tbl add classname_en TEXT DEFAULT null;")
+        println("Migration Complete")
     }
 }
