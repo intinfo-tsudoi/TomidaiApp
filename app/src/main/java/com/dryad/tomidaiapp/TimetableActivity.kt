@@ -22,22 +22,25 @@ class TimetableActivity : AppCompatActivity() {
         setTimeTable()
     }
 
-    public val set_classnamelang = "jp"
+    public val set_classnamelang = 1 //1:jp 2:en
 
     fun setTimeTable(){
         var id: Int = resources.getIdentifier("Mon1", "id", packageName)
         var btn: Button
         val launch = GlobalScope.launch {
             AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt().getAll().forEach {
-                Log.d("MainActivity", "${it.date_time}${it.classname}")
+                Log.d("MainActivity", "${it.date_time}${it.classname_jp}${it.classname_en}")
                 /*ログに授業名吐き出すよ*/
-                if(it.classname != null)
-                id = resources.getIdentifier(it.date_time, "id", packageName)
-                btn = findViewById(id)
-                if(set_classnamelang == "jp"){
-                    btn.text = it.classname
-                }else if(set_classnamelang == "en"){
-                    btn.text = it.classname
+                if(it.classname != null){
+                    id = resources.getIdentifier(it.date_time, "id", packageName)
+                    btn = findViewById(id)
+                    if(set_classnamelang == 1){
+                        println(it.classname_jp)
+                        btn.text = it.classname_jp
+                    }else if(set_classnamelang == 2){
+                        btn.text = it.classname_en
+                        println(it.classname_en)
+                    }
                 }
             }
         }
