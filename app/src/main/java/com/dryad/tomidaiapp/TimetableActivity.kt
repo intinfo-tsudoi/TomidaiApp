@@ -22,6 +22,7 @@ class TimetableActivity : AppCompatActivity() {
         setTimeTable()
     }
 
+    public val set_classnamelang = "jp"
 
     fun setTimeTable(){
         var id: Int = resources.getIdentifier("Mon1", "id", packageName)
@@ -33,7 +34,11 @@ class TimetableActivity : AppCompatActivity() {
                 if(it.classname != null)
                 id = resources.getIdentifier(it.date_time, "id", packageName)
                 btn = findViewById(id)
-                btn.text = it.classname
+                if(set_classnamelang == "jp"){
+                    btn.text = it.classname
+                }else if(set_classnamelang == "en"){
+                    btn.text = it.classname
+                }
             }
         }
     }

@@ -10,6 +10,6 @@ interface DataBaseDao_tt{
     suspend fun insertAll(Timetable: List<TimetableDatabase>)
     @Query("SELECT * FROM Timetable_tbl")
     suspend fun getAll(): List<TimetableDatabase>
-    @Query("UPDATE Timetable_tbl SET classname = :classname, teacher = :teacher, classregicode = :classregicode, classroom = :classroom, memo = :memo WHERE date_time = :date_time")
-    suspend fun updateTimetable(date_time: String,classname: String,teacher: String,classregicode: String,classroom: String,memo: String?): Int
+    @Query("UPDATE Timetable_tbl SET classname = :classname, classname_jp = :classname_jp, classname_en = :classname_en, teacher = :teacher, classregicode = :classregicode, classroom = :classroom, memo = :memo WHERE date_time = :date_time")
+    suspend fun updateTimetable(date_time: String,classname: String,classname_jp: String,classname_en: String,teacher: String,classregicode: String,classroom: String,memo: String?): Int
 }

@@ -104,10 +104,14 @@ class TimetableRegistrationActivity : AppCompatActivity() {
         val text_memo = editText_memo.text.toString()
         val launch = runBlocking {
             println(getdata)
+            val text_classname_jp = AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_sy().getClassname_jp(getdata)
+            val text_classname_en = AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_sy().getClassname_jp(getdata)
             val result = AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt()
                 .updateTimetable(
                     getdata,
                     text_classname,
+                    text_classname_jp,
+                    text_classname_en,
                     text_teacher,
                     text_classregicode,
                     text_classroom,

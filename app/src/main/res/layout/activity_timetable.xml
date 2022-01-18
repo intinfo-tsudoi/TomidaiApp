@@ -67,7 +67,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Tue1"
@@ -75,7 +76,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Wed1"
@@ -83,7 +85,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Thu1"
@@ -91,7 +94,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Fri1"
@@ -99,13 +103,15 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
         </TableRow>
 
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            app:autoSizeTextType="uniform">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -118,7 +124,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Tue2"
@@ -126,7 +133,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Wed2"
@@ -134,7 +142,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Thu2"
@@ -142,7 +151,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Fri2"
@@ -150,7 +160,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
         </TableRow>
 
         <TableRow
@@ -169,7 +180,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Tue3"
@@ -177,7 +189,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Wed3"
@@ -185,7 +198,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Thu3"
@@ -193,7 +207,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Fri3"
@@ -201,7 +216,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
         </TableRow>
 
         <TableRow
@@ -220,7 +236,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Tue4"
@@ -228,7 +245,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Wed4"
@@ -236,7 +254,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Thu4"
@@ -244,7 +263,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Fri4"
@@ -252,7 +272,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
         </TableRow>
 
         <TableRow
@@ -271,7 +292,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Tue5"
@@ -279,7 +301,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Wed5"
@@ -287,7 +310,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Thu5"
@@ -295,7 +319,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Fri5"
@@ -303,7 +328,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
         </TableRow>
 
         <TableRow
@@ -322,7 +348,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Tue6"
@@ -330,7 +357,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Wed6"
@@ -338,7 +366,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Thu6"
@@ -346,7 +375,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Fri6"
@@ -354,7 +384,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
         </TableRow>
 
         <TableRow
@@ -373,7 +404,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Tue7"
@@ -381,7 +413,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Wed7"
@@ -389,7 +422,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Thu7"
@@ -397,7 +431,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
 
             <Button
                 android:id="@+id/Fri7"
@@ -405,7 +440,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="ButtonTapped"
-                android:text="未登録" />
+                android:text="未登録"
+                app:autoSizeTextType="uniform"/>
         </TableRow>
 
     </TableLayout>

@@ -44,7 +44,6 @@ class ListData : AppCompatActivity() {
     fun onShow() {
         /**コルーチンの中にどこまで入れるか要注意**/
         var mainHandler: Handler? = Handler(Looper.getMainLooper())
-        val listView = findViewById<ListView>(R.id.listView_syllabus)
         var syllabusData: Syllabus
         var mCustomAdapter: CustomAdapter
         var mSyllabusList: ArrayList<Syllabus> = arrayListOf()
@@ -59,6 +58,7 @@ class ListData : AppCompatActivity() {
                 for (i in searched) {
                     println(i)
                     /**ゴリ押しでカスタムアダプターへ**/
+                    /**classname_jp,classname_enは今のところ入れない**/
                     syllabusData = Syllabus(
                         classname = i.classname,
                         teacher = i.teacher,
