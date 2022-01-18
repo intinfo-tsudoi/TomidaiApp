@@ -2,6 +2,8 @@ package com.dryad.tomidaiapp
 
 data class Syllabus(
     var classname: String? = null,
+    var classname_jp: String? = null,
+    var classname_en: String? = null,
     var teacher: String? = null,
     var classcategory: String? = null,
     var classtype: String? = null,

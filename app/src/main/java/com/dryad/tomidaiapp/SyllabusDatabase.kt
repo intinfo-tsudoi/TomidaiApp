@@ -10,6 +10,8 @@ data class SyllabusDatabase(
     @PrimaryKey
     @ColumnInfo(name = "id") val id: Int?,
     @ColumnInfo(name = "classname", typeAffinity = TEXT) val classname: String?,
+    @ColumnInfo(name = "classname_jp", typeAffinity = TEXT) val classname_jp: String?,
+    @ColumnInfo(name = "classname_en", typeAffinity = TEXT) val classname_en: String?,
     @ColumnInfo(name = "teacher", typeAffinity = UNDEFINED) val teacher: String?,
     @ColumnInfo(name = "classcategory", typeAffinity = UNDEFINED) val classcategory: String?,
     @ColumnInfo(name = "classtype", typeAffinity = UNDEFINED) val classtype: String?,

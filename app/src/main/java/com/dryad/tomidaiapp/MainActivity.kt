@@ -142,4 +142,5 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, SearchData::class.java)
         startActivities(arrayOf(intent))
     }
+
 }
