@@ -27,7 +27,7 @@ abstract class AppDatabase: RoomDatabase() {
                     "syllabus_database"
                 )
                     .apply {
-                        addMigrations(MIGRATION_1_2)
+                        addMigrations(MIGRATION_sy_1_2)
                     }
                     .createFromAsset("DBsyllabus.db")
                     .build()
@@ -47,7 +47,7 @@ abstract class AppDatabase: RoomDatabase() {
                     "timetable_database"
                 )
                     .apply {
-                        addMigrations(MIGRATION_1_2)
+                        addMigrations(MIGRATION_tt_1_2)
                     }
                     .createFromAsset("DBtimetable.db")
                     .build()
@@ -59,11 +59,16 @@ abstract class AppDatabase: RoomDatabase() {
     }
 }
 
-val MIGRATION_1_2 = object : Migration(1, 2) {
+val MIGRATION_sy_1_2 = object : Migration(1, 2) {
     override fun migrate(database: SupportSQLiteDatabase) {
         database.execSQL("ALTER TABLE Syllabus_tbl add classname_jp TEXT DEFAULT null;")
         database.execSQL("ALTER TABLE Syllabus_tbl add classname_en TEXT DEFAULT null;")
+        println("Migration Complete")
+    }
+}
 
+val MIGRATION_tt_1_2 = object : Migration(1, 2) {
+    override fun migrate(database: SupportSQLiteDatabase) {
         database.execSQL("ALTER TABLE Timetable_tbl add classname_jp TEXT DEFAULT null;")
         database.execSQL("ALTER TABLE Timetable_tbl add classname_en TEXT DEFAULT null;")
         println("Migration Complete")
