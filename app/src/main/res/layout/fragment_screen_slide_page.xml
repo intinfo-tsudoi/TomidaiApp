@@ -13,7 +13,7 @@
         android:background="@drawable/img_1756"
         android:clickable="true"
         android:contentDescription="@string/img_description"
-        android:onClick="ButtonTapped"
+        android:onClick="onMapButtonTapped"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@drawable/img_1756" />
