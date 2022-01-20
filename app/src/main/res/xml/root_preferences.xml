@@ -32,4 +32,16 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory app:title="@string/setting_timetable_title">
+
+        <ListPreference
+            app:key="timetable_lang"
+            app:title="@string/setting_timetable_lang_title"
+            app:useSimpleSummaryProvider="true"
+            app:defaultValue="JP"
+            app:entries="@array/timetable_lang_entries"
+            app:entryValues="@array/timetable_lang_values" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
