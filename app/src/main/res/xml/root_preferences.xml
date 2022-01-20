@@ -38,7 +38,7 @@
             app:key="timetable_lang"
             app:title="@string/setting_timetable_lang_title"
             app:useSimpleSummaryProvider="true"
-            app:defaultValue="JP"
+            app:defaultValue="1"
             app:entries="@array/timetable_lang_entries"
             app:entryValues="@array/timetable_lang_values" />
 
