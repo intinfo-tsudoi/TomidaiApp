@@ -17,6 +17,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import kotlinx.android.synthetic.main.settings_activity.*
 import java.time.LocalDate
 
 /**
@@ -114,7 +115,7 @@ class MainActivity : AppCompatActivity() {
         startActivities(arrayOf(intent))
     }
 
-    fun ButtonTapped(view: View){
+    fun onMapButtonTapped(view: View){
         val intent = Intent(this, MapsMainActivity::class.java)
         startActivities(arrayOf(intent))
     }
@@ -125,8 +126,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onSettingBtnTapped(view: View?) {
-        val intent = Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + BuildConfig.APPLICATION_ID))
-        startActivity(intent)
+        val intent = Intent(this, SettingsActivity::class.java)
+        startActivities(arrayOf(intent))
     }
 
     fun onContactBtnTapped(view: View?) {

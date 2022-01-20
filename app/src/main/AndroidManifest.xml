@@ -16,7 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TomidaiApp">
-      
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_settings" />
         <activity
             android:name=".ListData"
             android:exported="false" />
@@ -25,12 +28,8 @@
             android:exported="false"
             android:label="@string/title_activity_view_data"
             android:theme="@style/Theme.TomidaiApp.NoActionBar" />
-
-        <activity 
-            android:name=".TimetableActivity" />
-        <activity 
-            android:name=".TimetableRegistrationActivity" />
-
+        <activity android:name=".TimetableActivity" />
+        <activity android:name=".TimetableRegistrationActivity" />
         <activity android:name=".LinksMainActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
