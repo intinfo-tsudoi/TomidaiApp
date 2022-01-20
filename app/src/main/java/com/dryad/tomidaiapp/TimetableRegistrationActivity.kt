@@ -11,10 +11,18 @@ import androidx.fragment.app.DialogFragment
 import kotlinx.android.synthetic.main.activity_timetable_registration.*
 import kotlinx.coroutines.runBlocking
 
-class TimetableRegistrationActivity : AppCompatActivity() {
+class TimetableRegistrationActivity : AppCompatActivity(), check_update_DialogFragment.check_update_DialogLister {
 
     var getdata: String = "Mon1"
     var datetime_str: String = "月曜１限"
+
+    var text_classname = ""
+    var text_teacher = ""
+    var text_classroom = ""
+    var text_memo = ""
+    var text_classregicode = ""
+    var text_classname_jp = ""
+    var text_classname_en = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -108,56 +116,67 @@ class TimetableRegistrationActivity : AppCompatActivity() {
                     }
                 }
             }
+        }else{
+            val dialogFragment: DialogFragment = result_inputerror_DialogFragment()
+            dialogFragment.show(supportFragmentManager, "result_inputerror_dialog")
         }
     }
 
     fun TourokuButtonTapped(view: View){
-        val text_classname = editText_classname.text.toString()
-        val text_teacher = editText_teacher.text.toString()
-        val text_classroom = editText_classroom.text.toString()
-        val text_memo = editText_memo.text.toString()
-        val text_classregicode = editText_classregicode.text.toString()
-        val launch = runBlocking {
-            println(getdata)
-            if(AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt().check_empty(getdata) != null){
-                val dialogFragment: DialogFragment = check_update_DialogFragment()
-                val args = Bundle()
-                args.putString("date_time", datetime_str)
-                dialogFragment.arguments = args
-                dialogFragment.show(supportFragmentManager, "check_update_dialog")
-            }else{
+        text_classname = editText_classname.text.toString()
+        text_teacher = editText_teacher.text.toString()
+        text_classroom = editText_classroom.text.toString()
+        text_memo = editText_memo.text.toString()
+        text_classregicode = editText_classregicode.text.toString()
+        if(text_classregicode.length != 6){
+            val dialogFragment: DialogFragment = result_inputerror_DialogFragment()
+            dialogFragment.show(supportFragmentManager, "result_inputerror_dialog")
+        }else{
+            val launch = runBlocking {
                 println(getdata)
-                val text_classname_jp = AppDatabase.getDatabase_sy(applicationContext).DataBaseDao_sy()
+                text_classname_jp = AppDatabase.getDatabase_sy(applicationContext).DataBaseDao_sy()
                     .getClassname_jp(text_classregicode)
-                val text_classname_en = AppDatabase.getDatabase_sy(applicationContext).DataBaseDao_sy()
+                text_classname_en = AppDatabase.getDatabase_sy(applicationContext).DataBaseDao_sy()
                     .getClassname_en(text_classregicode)
-                val result = AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt()
-                    .updateTimetable(
-                        getdata,
-                        text_classname,
-                        text_classname_jp,
-                        text_classname_en,
-                        text_teacher,
-                        text_classregicode,
-                        text_classroom,
-                        text_memo
-                    )
-                println("clear")
-                Log.d("result", "$result")//1だったら適切に１列更新できているはず
+                if(AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt().check_empty(getdata).isNotEmpty()){
+                    val dialogFragment: DialogFragment = check_update_DialogFragment()
+                    val args = Bundle()
+                    args.putString("date_time", datetime_str)
+                    dialogFragment.arguments = args
+                    dialogFragment.show(supportFragmentManager, "check_update_dialog")
+                }else{
+                    println(getdata)
+                    set_classdata()
+                }
             }
         }
     }
 
-    fun onDialogPositiveClick(dialog: DialogFragment) {
+    override fun onDialogPositiveClick(dialog: DialogFragment) {
         println("NoticeDialogでOKボタンが押されたよ！")
+        set_classdata()
     }
 
-    fun onDialogNegativeClick(dialog: DialogFragment) {
+    override fun onDialogNegativeClick(dialog: DialogFragment) {
         println("NoticeDialogでCancelボタンが押されたよ！")
     }
 
     public fun set_classdata(){
-
+        val launch = runBlocking {
+            val result = AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt()
+                .updateTimetable(
+                    getdata,
+                    text_classname,
+                    text_classname_jp,
+                    text_classname_en,
+                    text_teacher,
+                    text_classregicode,
+                    text_classroom,
+                    text_memo
+                )
+            println("clear")
+            Log.d("result", "$result")//1だったら適切に１列更新できているはず
+        }
     }
 
     fun onBackPressed(view: View) {

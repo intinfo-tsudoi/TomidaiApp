@@ -24,17 +24,17 @@ class AppDialogFragment : DialogFragment() {
 }
 
 class check_update_DialogFragment : DialogFragment() {
-    public interface NoticeDialogLister {
+    public interface check_update_DialogLister {
         public fun onDialogPositiveClick(dialog:DialogFragment)
         public fun onDialogNegativeClick(dialog:DialogFragment)
     }
 
-    var mLister:NoticeDialogLister? = null
+    var mLister:check_update_DialogLister? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         try {
-            mLister = context as NoticeDialogLister
+            mLister = context as check_update_DialogLister
         } catch (e: ClassCastException) {
             throw ClassCastException("${context.toString()} must implement NoticeDialogListener")
         }
@@ -75,9 +75,16 @@ class result_null_DialogFragment : DialogFragment() {
         val builder = AlertDialog.Builder(activity)
         builder.setTitle("検索エラー")
             .setMessage("この授業コードは存在しません。")
-            .setPositiveButton("OK") { dialog, id ->
-                // このボタンを押した時の処理を書きます。
-            }
+            .setNegativeButton("戻る", null)
+        return builder.create()
+    }
+}
+
+class result_inputerror_DialogFragment : DialogFragment() {
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val builder = AlertDialog.Builder(activity)
+        builder.setTitle("検索エラー")
+            .setMessage("授業コードは６文字で入力してください。")
             .setNegativeButton("戻る", null)
         return builder.create()
     }

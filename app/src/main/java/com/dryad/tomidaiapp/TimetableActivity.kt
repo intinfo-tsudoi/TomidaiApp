@@ -19,9 +19,13 @@ class TimetableActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timetable)
-        setTimeTable()
     }
 
+    override fun onResume() {
+        super.onResume()
+        setContentView(R.layout.activity_timetable)
+        setTimeTable()
+    }
     public val set_classnamelang = 1 //1:jp 2:en
 
     fun setTimeTable(){
