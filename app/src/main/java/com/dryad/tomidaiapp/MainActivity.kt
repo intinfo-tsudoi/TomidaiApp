@@ -12,6 +12,7 @@ import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
@@ -139,8 +140,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onTestBtnTapped(view: View){
-        val intent = Intent(this, SearchData::class.java)
-        startActivities(arrayOf(intent))
+        //val intent = Intent(this, SearchData::class.java)
+        //startActivities(arrayOf(intent))
+        val dialogFragment = AppDialogFragment()
+        dialogFragment.show(supportFragmentManager, "test_dialog")
     }
 
 }
