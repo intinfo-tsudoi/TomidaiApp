@@ -7,12 +7,14 @@ import android.os.Looper
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import androidx.fragment.app.DialogFragment
 import kotlinx.android.synthetic.main.activity_timetable_registration.*
 import kotlinx.coroutines.runBlocking
 
 class TimetableRegistrationActivity : AppCompatActivity() {
 
-    var getdata: String = "000000"
+    var getdata: String = "Mon1"
+    var datetime_str: String = "月曜１限"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,8 +44,9 @@ class TimetableRegistrationActivity : AppCompatActivity() {
             date_str = "金曜"
         }
 
-        var datetime_str = date_str+time+"限"
-
+        datetime_str = date_str+time+"限"
+        //db側を時限半角にするならいらないよーー
+        datetime_str = datetime_str.replace("1","１" ).replace("2","２" ).replace("3","３" ).replace("4","４" ).replace("5","５" ).replace("6","６" ).replace("7","７" )
         println(datetime_str)
 
         var set_str = "登録する時間：$datetime_str"
@@ -69,6 +72,8 @@ class TimetableRegistrationActivity : AppCompatActivity() {
                         .SearchDataForRegistration(text_classregicode)
                 if (searched.isEmpty()) {
                     Log.d("Coroutine", "NoData")
+                    val dialogFragment: DialogFragment = result_null_DialogFragment()
+                    dialogFragment.show(supportFragmentManager, "result_null_dialog")
                 } else if (searched.size > 1) {
                     Log.d("Coroutine", "検索結果が複数あります")
                     println(searched[0])
@@ -83,13 +88,23 @@ class TimetableRegistrationActivity : AppCompatActivity() {
                 } else {
                     Log.d("Coroutine", "正常に検索されました")
                     println(searched[0])
-                    println(searched.size)
-                    mainHandler.post {
-                        editText_classname.setText(
-                            searched[0].classname,
-                            TextView.BufferType.NORMAL
-                        )
-                        editText_teacher.setText(searched[0].teacher, TextView.BufferType.NORMAL)
+                    println(searched[0].period)
+                    println(searched[0].period!!.indexOf(datetime_str))
+                    println(datetime_str)
+                    if(searched[0].period!!.indexOf(datetime_str) == -1){
+                        val dialogFragment: DialogFragment = result_nomacth_DialogFragment()
+                        val args = Bundle()
+                        args.putString("date_time", datetime_str)
+                        dialogFragment.arguments = args
+                        dialogFragment.show(supportFragmentManager, "resulr_nomatch_dialog")
+                    }else{
+                        mainHandler.post {
+                            editText_classname.setText(
+                                searched[0].classname,
+                                TextView.BufferType.NORMAL
+                            )
+                            editText_teacher.setText(searched[0].teacher, TextView.BufferType.NORMAL)
+                        }
                     }
                 }
             }
@@ -97,29 +112,52 @@ class TimetableRegistrationActivity : AppCompatActivity() {
     }
 
     fun TourokuButtonTapped(view: View){
-        val text_classregicode = editText_classregicode.text.toString()
         val text_classname = editText_classname.text.toString()
         val text_teacher = editText_teacher.text.toString()
         val text_classroom = editText_classroom.text.toString()
         val text_memo = editText_memo.text.toString()
+        val text_classregicode = editText_classregicode.text.toString()
         val launch = runBlocking {
             println(getdata)
-            val text_classname_jp = AppDatabase.getDatabase_sy(applicationContext).DataBaseDao_sy().getClassname_jp(text_classregicode)
-            val text_classname_en = AppDatabase.getDatabase_sy(applicationContext).DataBaseDao_sy().getClassname_en(text_classregicode)
-            val result = AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt()
-                .updateTimetable(
-                    getdata,
-                    text_classname,
-                    text_classname_jp,
-                    text_classname_en,
-                    text_teacher,
-                    text_classregicode,
-                    text_classroom,
-                    text_memo
-                )
-            println("clear")
-            Log.d("result", "$result")//1だったら適切に１列更新できているはず
+            if(AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt().check_empty(getdata) != null){
+                val dialogFragment: DialogFragment = check_update_DialogFragment()
+                val args = Bundle()
+                args.putString("date_time", datetime_str)
+                dialogFragment.arguments = args
+                dialogFragment.show(supportFragmentManager, "check_update_dialog")
+            }else{
+                println(getdata)
+                val text_classname_jp = AppDatabase.getDatabase_sy(applicationContext).DataBaseDao_sy()
+                    .getClassname_jp(text_classregicode)
+                val text_classname_en = AppDatabase.getDatabase_sy(applicationContext).DataBaseDao_sy()
+                    .getClassname_en(text_classregicode)
+                val result = AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt()
+                    .updateTimetable(
+                        getdata,
+                        text_classname,
+                        text_classname_jp,
+                        text_classname_en,
+                        text_teacher,
+                        text_classregicode,
+                        text_classroom,
+                        text_memo
+                    )
+                println("clear")
+                Log.d("result", "$result")//1だったら適切に１列更新できているはず
+            }
         }
+    }
+
+    fun onDialogPositiveClick(dialog: DialogFragment) {
+        println("NoticeDialogでOKボタンが押されたよ！")
+    }
+
+    fun onDialogNegativeClick(dialog: DialogFragment) {
+        println("NoticeDialogでCancelボタンが押されたよ！")
+    }
+
+    public fun set_classdata(){
+
     }
 
     fun onBackPressed(view: View) {

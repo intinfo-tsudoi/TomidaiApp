@@ -63,7 +63,7 @@ val MIGRATION_sy_1_2 = object : Migration(1, 2) {
     override fun migrate(database: SupportSQLiteDatabase) {
         database.execSQL("ALTER TABLE Syllabus_tbl add classname_jp TEXT DEFAULT null;")
         database.execSQL("ALTER TABLE Syllabus_tbl add classname_en TEXT DEFAULT null;")
-        println("Migration Complete")
+        println("sy Migration Complete")
     }
 }
 
@@ -71,6 +71,6 @@ val MIGRATION_tt_1_2 = object : Migration(1, 2) {
     override fun migrate(database: SupportSQLiteDatabase) {
         database.execSQL("ALTER TABLE Timetable_tbl add classname_jp TEXT DEFAULT null;")
         database.execSQL("ALTER TABLE Timetable_tbl add classname_en TEXT DEFAULT null;")
-        println("Migration Complete")
+        println("tt Migration Complete")
     }
 }
