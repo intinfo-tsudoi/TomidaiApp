@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import androidx.core.content.ContextCompat.startActivities
+import androidx.preference.PreferenceManager
 import kotlinx.android.synthetic.main.activity_search_data.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -16,6 +17,9 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 
 class TimetableActivity : AppCompatActivity() {
+
+    var set_classnamelang = "JP"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timetable)
@@ -24,9 +28,11 @@ class TimetableActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         setContentView(R.layout.activity_timetable)
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this /* Activity context */)
+        set_classnamelang = sharedPreferences.getString("timetable_lang", "")!!
+        println(set_classnamelang)
         setTimeTable()
     }
-    public val set_classnamelang = 1 //1:jp 2:en
 
     fun setTimeTable(){
         var id: Int = resources.getIdentifier("Mon1", "id", packageName)
@@ -38,10 +44,10 @@ class TimetableActivity : AppCompatActivity() {
                 if(it.classname != null){
                     id = resources.getIdentifier(it.date_time, "id", packageName)
                     btn = findViewById(id)
-                    if(set_classnamelang == 1){
+                    if(set_classnamelang == "JP"){
                         println(it.classname_jp)
                         btn.text = it.classname_jp
-                    }else if(set_classnamelang == 2){
+                    }else if(set_classnamelang == "EN"){
                         btn.text = it.classname_en
                         println(it.classname_en)
                     }
@@ -50,7 +56,7 @@ class TimetableActivity : AppCompatActivity() {
         }
     }
 
-    fun ButtonTapped(view: View){
+    fun onButtonTapped(view: View){
         val str_btn_id = resources.getResourceEntryName(view.id)//そのままだと数字の羅列で出てくるからこれで変換してるよ
         println(str_btn_id)
         val intent = Intent(this, TimetableRegistrationActivity::class.java)

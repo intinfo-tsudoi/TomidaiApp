@@ -17,7 +17,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_view">View</string>
 
-    /*時間割登録フォーム*/
+    <!--時間割登録フォーム-->
     <string name="formname_subjectcode">時間割コード</string>
     <string name="formname_subjectname">科目名</string>
     <string name="formname_teacher">教員名</string>
@@ -57,4 +57,17 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <!-- timetable -->
+    <string name="setting_timetable_title">時間割の設定</string>>
+    <string name="setting_timetable_lang_title">時間割の表示言語</string>
+    <string-array name="timetable_lang_entries">
+        <item>日本語/Japanese</item>
+        <item>英語/English</item>
+    </string-array>
+    <string-array name="timetable_lang_values">
+        <item>JP</item>
+        <item>EN</item>
+    </string-array>
+
 </resources>
