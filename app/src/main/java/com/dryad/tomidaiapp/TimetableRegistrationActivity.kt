@@ -24,6 +24,7 @@ class TimetableRegistrationActivity : AppCompatActivity(), check_update_DialogFr
     var text_classname_jp = ""
     var text_classname_en = ""
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timetable_registration)
@@ -178,6 +179,7 @@ class TimetableRegistrationActivity : AppCompatActivity(), check_update_DialogFr
             Log.d("result", "$result")//1だったら適切に１列更新できているはず
         }
     }
+
 
     fun onBackPressed(view: View) {
         super.onBackPressed()

@@ -14,4 +14,6 @@ interface DataBaseDao_tt{
     suspend fun updateTimetable(date_time: String,classname: String,classname_jp: String,classname_en: String,teacher: String,classregicode: String,classroom: String,memo: String?): Int
     @Query("SELECT classname FROM Timetable_tbl WHERE date_time = :date_time")
     suspend fun check_empty(date_time: String): String
+    @Query("SELECT classregicode FROM TIMETABLE_TBL WHERE date_time = :date_time")
+    suspend fun getClassregicode(date_time: String): String
 }
