@@ -6,6 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
+import kotlinx.coroutines.CoroutineScope
 
 @Database(entities = [SyllabusDatabase::class, TimetableDatabase::class], version = 2, exportSchema = false)//最終アップデート：2022/01/19
 abstract class AppDatabase: RoomDatabase() {

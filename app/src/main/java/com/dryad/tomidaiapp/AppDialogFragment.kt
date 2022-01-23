@@ -7,6 +7,8 @@ import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
 import android.content.Intent
+import androidx.preference.Preference
+import androidx.preference.PreferenceFragmentCompat
 
 
 class AppDialogFragment : DialogFragment() {
@@ -68,7 +70,6 @@ class check_update_DialogFragment : DialogFragment() {
 
     }
 }
-
 
 class result_null_DialogFragment : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {

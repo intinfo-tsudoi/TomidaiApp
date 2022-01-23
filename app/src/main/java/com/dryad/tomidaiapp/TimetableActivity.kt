@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.DialogFragment
 import androidx.preference.PreferenceManager
 import kotlinx.android.synthetic.main.activity_search_data.*
 import kotlinx.android.synthetic.main.activity_timetable.*
