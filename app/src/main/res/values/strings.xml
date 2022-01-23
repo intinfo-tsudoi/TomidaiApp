@@ -61,6 +61,12 @@
     <!-- timetable -->
     <string name="setting_timetable_title">時間割の設定</string>>
     <string name="setting_timetable_lang_title">時間割の表示言語</string>
+    <string name="Mon">月曜日</string>
+    <string name="Tue">火曜日</string>
+    <string name="Wed">水曜日</string>
+    <string name="Thu">木曜日</string>
+    <string name="Fri">金曜日</string>
+    <string name="non_set_tt">未登録</string>
     <string-array name="timetable_lang_entries">
         <item>日本語/Japanese</item>
         <item>英語/English</item>

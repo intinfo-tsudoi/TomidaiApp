@@ -2,11 +2,8 @@ package com.dryad.tomidaiapp
 
 import android.app.AlertDialog
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.DialogFragment
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import kotlinx.coroutines.GlobalScope
@@ -40,9 +37,8 @@ class SettingsActivity : AppCompatActivity() {
                         .setMessage("保存されている時間割を削除します\n削除されたデータは元に戻せません")
                         .setPositiveButton("OK") { _, _ ->
                             deleteTimetable()
-                            //this.context?.deleteDatabase("timetable_database")
-                            //println("delete")
                         }
+                        .setNegativeButton("キャンセル", null)
                         .show()
                     false
                 }
@@ -52,8 +48,8 @@ class SettingsActivity : AppCompatActivity() {
             }
         }
 
-        fun deleteTimetable(){
-            val launch = GlobalScope.launch {
+        private fun deleteTimetable(){
+            GlobalScope.launch {
                 AppDatabase.getDatabase_tt(requireContext()).DataBaseDao_tt().getAll().forEach {
                     Log.d("MainActivity", "${it.date_time}${it.classname_jp}${it.classname_en}")
                     AppDatabase.getDatabase_tt(requireContext()).DataBaseDao_tt().updateTimetable("${it.date_time}","","","","","","","")

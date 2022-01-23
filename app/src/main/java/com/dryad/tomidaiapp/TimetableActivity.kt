@@ -1,15 +1,11 @@
 package com.dryad.tomidaiapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import android.view.View
 import android.widget.Button
-import android.widget.TextView
-import androidx.fragment.app.DialogFragment
+import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
 import kotlinx.android.synthetic.main.activity_search_data.*
 import kotlinx.android.synthetic.main.activity_timetable.*
@@ -49,15 +45,14 @@ class TimetableActivity : AppCompatActivity() {
     }
 
     fun setTimeTable(){
-        var id: Int = resources.getIdentifier("Mon1", "id", packageName)
+        var id: Int
         var btn: Button
-        val launch = GlobalScope.launch {
-            val mainHandler = Handler(Looper.getMainLooper())
+        GlobalScope.launch {
             AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt().getAll().forEach {
                 Log.d("MainActivity", "${it.date_time}${it.classname_jp}${it.classname_en}")
                 /*ログに授業名吐き出すよ*/
                 if(!set_timetable_extend){
-                    if(it.date_time!!.contains("6") || it.date_time!!.contains("7")) {
+                    if(it.date_time!!.contains("6") || it.date_time.contains("7")) {
                         return@forEach
                     }
                 }
@@ -86,7 +81,7 @@ class TimetableActivity : AppCompatActivity() {
         }else{
             /*授業詳細がでるようにしたい*/
             var classregicode: String
-            val launch = runBlocking {
+            runBlocking {
                 classregicode = AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt().getClassregicode(str_btn_id)
             }
             if(classregicode.isNotEmpty()) {

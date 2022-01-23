@@ -3,12 +3,8 @@ package com.dryad.tomidaiapp
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
-import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
-import android.content.Intent
-import androidx.preference.Preference
-import androidx.preference.PreferenceFragmentCompat
 
 
 class AppDialogFragment : DialogFragment() {
@@ -26,9 +22,9 @@ class AppDialogFragment : DialogFragment() {
 }
 
 class check_update_DialogFragment : DialogFragment() {
-    public interface check_update_DialogLister {
-        public fun onDialogPositiveClick(dialog:DialogFragment)
-        public fun onDialogNegativeClick(dialog:DialogFragment)
+    interface check_update_DialogLister {
+        fun onDialogPositiveClick(dialog:DialogFragment)
+        fun onDialogNegativeClick(dialog:DialogFragment)
     }
 
     var mLister:check_update_DialogLister? = null
