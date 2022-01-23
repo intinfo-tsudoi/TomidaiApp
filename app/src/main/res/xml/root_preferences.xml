@@ -1,4 +1,5 @@
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory app:title="@string/setting_timetable_title">
 
@@ -9,6 +10,13 @@
             app:defaultValue="JP"
             app:entries="@array/timetable_lang_entries"
             app:entryValues="@array/timetable_lang_values" />
+
+        <SwitchPreference
+            app:key="timetable_extend"
+            app:title="時間割を拡張する(夜間授業向け)"
+            android:summary="時間割の6・7限を表示することができます"
+            app:defaultValue="false"
+            />
 
     </PreferenceCategory>
 

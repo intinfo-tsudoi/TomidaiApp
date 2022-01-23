@@ -403,6 +403,138 @@
                     app:backgroundTint="#FFFFFF" />
             </TableRow>
 
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/Mon6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onEachButtonTapped"
+                    android:padding="0dp"
+                    android:text="未登録"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    app:backgroundTint="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/Tue6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onEachButtonTapped"
+                    android:padding="0dp"
+                    android:text="未登録"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    app:backgroundTint="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/Wed6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onEachButtonTapped"
+                    android:padding="0dp"
+                    android:text="未登録"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    app:backgroundTint="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/Thu6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onEachButtonTapped"
+                    android:padding="0dp"
+                    android:text="未登録"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    app:backgroundTint="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/Fri6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onEachButtonTapped"
+                    android:padding="0dp"
+                    android:text="未登録"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    app:backgroundTint="#FFFFFF" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/Mon7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onEachButtonTapped"
+                    android:padding="0dp"
+                    android:text="未登録"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    app:backgroundTint="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/Tue7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onEachButtonTapped"
+                    android:padding="0dp"
+                    android:text="未登録"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    app:backgroundTint="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/Wed7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onEachButtonTapped"
+                    android:padding="0dp"
+                    android:text="未登録"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    app:backgroundTint="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/Thu7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onEachButtonTapped"
+                    android:padding="0dp"
+                    android:text="未登録"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    app:backgroundTint="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/Fri7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onEachButtonTapped"
+                    android:padding="0dp"
+                    android:text="未登録"
+                    android:textColor="#000000"
+                    android:textSize="8sp"
+                    app:backgroundTint="#FFFFFF" />
+            </TableRow>
+
     </TableLayout>
 
     </LinearLayout>
