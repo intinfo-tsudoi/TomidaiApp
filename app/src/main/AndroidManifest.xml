@@ -8,6 +8,7 @@
          location permissions for the "MyLocation" functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +17,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TomidaiApp">
+        <activity
+            android:name=".P3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".P2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".P1Activity"
+            android:exported="false"
+            android:label="@string/title_activity_p1"
+            android:theme="@style/Theme.TomidaiApp.NoActionBar" />
+        <activity
+            android:name=".ScreenSlidePageFragment3"
+            android:exported="false" />
+        <activity
+            android:name=".MoodleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BusActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ContactActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CotactActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FloorActivity"
+            android:exported="false" />
         <activity
             android:name=".SettingsActivity"
             android:exported="false"

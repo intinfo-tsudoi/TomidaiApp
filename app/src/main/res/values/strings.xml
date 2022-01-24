@@ -69,5 +69,6 @@
         <item>JP</item>
         <item>EN</item>
     </string-array>
+    <string name="title_activity_p1">P1Activity</string>
 
 </resources>

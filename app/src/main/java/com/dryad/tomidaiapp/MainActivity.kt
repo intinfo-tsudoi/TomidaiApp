@@ -23,7 +23,7 @@ import java.time.LocalDate
 /**
  * The number of pages (wizard steps) to show in this demo.
  */
-private const val NUM_PAGES = 5
+private const val NUM_PAGES = 3
 
 class MainActivity : AppCompatActivity() {
 
@@ -99,15 +99,25 @@ class MainActivity : AppCompatActivity() {
                     ScreenSlidePageFragment()
                 }
                 1 -> {
-                    ScreenSlidePageFragment()
-                }
-                2 -> {
                     ScreenSlidePageFragment2()
                 }
                 else -> {
-                    ScreenSlidePageFragment2()
+                    ScreenSlidePageFragment3()
                 }
             }
+    }
+
+    fun onP1BtnTapped(view: View){
+        val intent = Intent(this, P1Activity::class.java)
+        startActivities(arrayOf(intent))
+    }
+    fun onP2BtnTapped(view: View){
+        val intent = Intent(this, P2Activity::class.java)
+        startActivities(arrayOf(intent))
+    }
+    fun onP3BtnTapped(view: View){
+        val intent = Intent(this, P3Activity::class.java)
+        startActivities(arrayOf(intent))
     }
 
     fun onTimetableBtnTapped(view: View){
@@ -121,7 +131,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onBusBtnTapped(view: View?) {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.u-toyama.ac.jp/studentsupport/student-support/shuttle_bus/"))
+        val intent = Intent(this, BusActivity::class.java)
         startActivity(intent)
     }
 
@@ -131,7 +141,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onContactBtnTapped(view: View?) {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.u-toyama.ac.jp/wp/wp-content/uploads/campusguide_cg02.pdf"))
+        val intent = Intent(this, ContactActivity::class.java)
         startActivity(intent)
     }
 

@@ -5,12 +5,20 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.webkit.WebView
+import android.view.WindowManager
+import android.R.id
+
+import android.R.id.button1
+import android.widget.Button
 
 class MapsMainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps_main)
     }
+
     fun onGofukuBtnTapped(view: View?) {
         val intent = Intent(this, MapsGofukuActivity::class.java)
         startActivity(intent)
@@ -27,7 +35,7 @@ class MapsMainActivity : AppCompatActivity() {
     }
 
     fun onFloorBtnTapped(view: View?) {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.u-toyama.ac.jp/wp/wp-content/uploads/campusguide_cg01.pdf"))
+        val intent = Intent(this, FloorActivity::class.java)
         startActivity(intent)
     }
 }
