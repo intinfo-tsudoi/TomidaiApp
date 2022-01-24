@@ -111,7 +111,7 @@
         android:shadowDx="3"
         android:shadowDy="3"
         android:shadowRadius="1"
-        android:text="設定"
+        android:text="設定\nその他"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"

@@ -124,7 +124,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onSettingBtnTapped(view: View?) {
-        val intent = Intent(this, SettingsActivity::class.java)
+        val intent = Intent(this, SettingsAndOtherActivity::class.java)
         startActivities(arrayOf(intent))
     }
 
@@ -139,7 +139,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onTestBtnTapped(view: View){
-        //val intent = Intent(this, SearchData::class.java)
+        //val intent = Intent(this, SettingsAndOtherActivity::class.java)
         //startActivities(arrayOf(intent))
         val dialogFragment = AppDialogFragment()
         dialogFragment.show(supportFragmentManager, "test_dialog")

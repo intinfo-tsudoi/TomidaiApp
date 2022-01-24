@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TomidaiApp">
         <activity
+            android:name=".SettingsAndOtherActivity"
+            android:exported="false" />
+        <activity
             android:name=".SettingsActivity"
             android:exported="false"
             android:label="@string/title_activity_settings" />
