@@ -32,12 +32,10 @@ class TimetableRegistrationActivity : AppCompatActivity(), check_update_DialogFr
         getdata = intent.getStringExtra("id").toString()
         println(getdata)
 
-        var date: String?
-        var time: String?
         var date_str: String? = null
         /* getdataへの処理 */
-        date = getdata.substring(0, 3)
-        time = getdata.substring(3)
+        val date = getdata.substring(0, 3)
+        val time = getdata.substring(3)
         println(date)
         println(time)
 
@@ -58,14 +56,10 @@ class TimetableRegistrationActivity : AppCompatActivity(), check_update_DialogFr
         datetime_str = datetime_str.replace("1","１" ).replace("2","２" ).replace("3","３" ).replace("4","４" ).replace("5","５" ).replace("6","６" ).replace("7","７" )
         println(datetime_str)
 
-        var set_str = "登録する時間：$datetime_str"
+        val set_str = "登録する時間：$datetime_str"
 
-        var datetime_text = findViewById<TextView>(R.id.textView_date_time_timetableRegist)
+        val datetime_text = findViewById<TextView>(R.id.textView_date_time_timetableRegist)
         datetime_text.text = set_str
-
-        // Spinnerの取得
-        //val spinner = findViewById<Spinner>(R.id.spinner1)
-        //val spinner2 = findViewById<Spinner>(R.id.spinner2)
 
     }
 
@@ -74,7 +68,7 @@ class TimetableRegistrationActivity : AppCompatActivity(), check_update_DialogFr
         Log.d("Searched", text_classregicode)
         if(text_classregicode.length == 6) {
             //コルーチンだけど他のスレッドブロックするよ
-            val launch = runBlocking {
+            runBlocking {
                 val mainHandler = Handler(Looper.getMainLooper())
                 val searched: Array<SylalbusforRegist> =
                     AppDatabase.getDatabase_sy(applicationContext).DataBaseDao_sy()
@@ -133,7 +127,7 @@ class TimetableRegistrationActivity : AppCompatActivity(), check_update_DialogFr
             val dialogFragment: DialogFragment = result_inputerror_DialogFragment()
             dialogFragment.show(supportFragmentManager, "result_inputerror_dialog")
         }else{
-            val launch = runBlocking {
+            runBlocking {
                 println(getdata)
                 text_classname_jp = AppDatabase.getDatabase_sy(applicationContext).DataBaseDao_sy()
                     .getClassname_jp(text_classregicode)
@@ -162,8 +156,8 @@ class TimetableRegistrationActivity : AppCompatActivity(), check_update_DialogFr
         println("NoticeDialogでCancelボタンが押されたよ！")
     }
 
-    public fun set_classdata(){
-        val launch = runBlocking {
+    fun set_classdata(){
+        runBlocking {
             val result = AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt()
                 .updateTimetable(
                     getdata,

@@ -1,17 +1,14 @@
 package com.dryad.tomidaiapp
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.util.Log
-import android.widget.ListView
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_list_data.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import android.os.Looper
-
-
 
 
 class ListData : AppCompatActivity() {
@@ -43,11 +40,11 @@ class ListData : AppCompatActivity() {
     @SuppressLint("Range")
     fun onShow() {
         /**コルーチンの中にどこまで入れるか要注意**/
-        var mainHandler: Handler? = Handler(Looper.getMainLooper())
+        val mainHandler = Handler(Looper.getMainLooper())
         var syllabusData: Syllabus
         var mCustomAdapter: CustomAdapter
         var mSyllabusList: ArrayList<Syllabus> = arrayListOf()
-        val launch = GlobalScope.launch {
+        GlobalScope.launch {
             val searched: Array<SyllabusDatabase> = AppDatabase.getDatabase_sy(applicationContext).DataBaseDao_sy().SerachByClassregicode(getdata)
             println(searched)
             println(searched.size)
@@ -58,6 +55,8 @@ class ListData : AppCompatActivity() {
                 for (i in searched) {
                     println(i)
                     /**ゴリ押しでカスタムアダプターへ**/
+                    /**ゴリ押しでカスタムアダプターへ**/
+                    /**classname_jp,classname_enは今のところ入れない**/
                     /**classname_jp,classname_enは今のところ入れない**/
                     syllabusData = Syllabus(
                         classname = i.classname,
@@ -99,7 +98,7 @@ class ListData : AppCompatActivity() {
             // adapterをlistViewに紐付けます。
             // メインスレッド外でUIはいじれないのでハンドラーで処理するよ
             println(mCustomAdapter)
-            mainHandler!!.post { listView_syllabus.adapter = mCustomAdapter }
+            mainHandler.post { listView_syllabus.adapter = mCustomAdapter }
 
         }
 

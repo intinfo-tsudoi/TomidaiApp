@@ -10,7 +10,7 @@ class SubActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sub)
-        val launch = GlobalScope.launch {
+        GlobalScope.launch {
             AppDatabase.getDatabase_sy(applicationContext).DataBaseDao_sy().getAll().forEach {
                 Log.d("MainActivity", "${it.id}")
                 /*ログに授業名吐き出すよ*/

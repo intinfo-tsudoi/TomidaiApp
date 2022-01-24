@@ -19,7 +19,8 @@
             android:layout_weight="0.03"
             android:onClick="onTappedEdit"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlHardcoded" />
 
         <TableLayout
             android:id="@+id/container"
@@ -27,9 +28,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.97
 "
-            android:paddingBottom="20dp"
-            android:paddingHorizontal="20dp"
-
+            android:paddingBottom="10dp"
+            android:paddingHorizontal="10dp"
             app:layout_constraintTop_toBottomOf="@+id/edit_tt">
 
             <TableRow
@@ -42,35 +42,35 @@
                     android:layout_weight="1"
                     android:clickable="false"
                     android:gravity="center"
-                    android:text="月曜日" />
+                    android:text="@string/Mon" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="火曜日" />
+                    android:text="@string/Tue" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="水曜日" />
+                    android:text="@string/Wed" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="木曜日" />
+                    android:text="@string/Thu" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="金曜日" />
+                    android:text="@string/Fri" />
 
             </TableRow>
 
@@ -84,11 +84,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF"/>
 
                 <Button
@@ -96,11 +100,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -108,10 +116,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
+                    android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -119,11 +132,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -131,11 +148,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
             </TableRow>
 
@@ -150,11 +171,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -162,11 +187,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -174,11 +203,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -186,11 +219,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -198,11 +235,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
             </TableRow>
 
@@ -216,11 +257,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -228,11 +273,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -240,11 +289,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -252,11 +305,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -264,11 +321,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
             </TableRow>
 
@@ -282,11 +343,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -294,10 +359,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
+                    android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -305,11 +375,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -317,11 +391,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -329,11 +407,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
             </TableRow>
 
@@ -347,11 +429,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -359,11 +445,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -371,11 +461,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -383,11 +477,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -395,11 +493,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
             </TableRow>
 
@@ -413,11 +515,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -425,11 +531,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -437,11 +547,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -449,11 +563,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -461,11 +579,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
             </TableRow>
 
@@ -481,9 +603,13 @@
                     android:layout_weight="1"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -491,11 +617,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -503,11 +633,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -515,11 +649,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
 
                 <Button
@@ -527,11 +665,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:insetLeft="1dp"
+                    android:insetTop="3dp"
+                    android:insetRight="1dp"
+                    android:insetBottom="3dp"
                     android:onClick="onEachButtonTapped"
                     android:padding="0dp"
-                    android:text="未登録"
+                    android:text="@string/non_set_tt"
                     android:textColor="#000000"
-                    android:textSize="8sp"
+                    android:textSize="10sp"
                     app:backgroundTint="#FFFFFF" />
             </TableRow>
 
