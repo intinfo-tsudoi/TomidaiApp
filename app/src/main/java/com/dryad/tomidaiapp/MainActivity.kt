@@ -123,6 +123,11 @@ class MainActivity : AppCompatActivity() {
         startActivities(arrayOf(intent))
     }
 
+    fun onSyllabusButtonTapped(view: View){
+        val intent = Intent(this, SearchActivity::class.java)
+        startActivities(arrayOf(intent))
+    }
+
     fun onMapButtonTapped(view: View){
         val intent = Intent(this, MapsMainActivity::class.java)
         startActivities(arrayOf(intent))

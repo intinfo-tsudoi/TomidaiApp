@@ -90,6 +90,25 @@
         <activity android:name=".MapsTakaokaActivity" />
         <activity android:name=".MapsMainActivity" />
         <activity android:name=".SubActivity" />
+
+        <activity
+            android:name=".Results1"
+            android:exported="false" />
+        <activity
+            android:name=".Results2"
+            android:exported="false" />
+        <activity
+            android:name=".Search2"
+            android:exported="false" />
+        <activity
+            android:name=".Search1"
+            android:exported="false"
+            android:label="@string/title_activity_view_data"
+            android:theme="@style/Theme.TomidaiApp.NoActionBar"/>
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
