@@ -41,6 +41,110 @@
         <item>６限</item>
         <item>７限</item>
     </string-array>
+
+    <string name="button1">講義名検索</string>
+    <string name="button2">詳細検索</string>
+    <string name="zenbun">検索</string>
+    <string name="shosai">検索</string>
+    <string-array name="list1">
+        <item>教養教育</item>
+        <item>人文学部</item>
+        <item>人間発達科学部</item>
+        <item>経済学部</item>
+        <item>理学部</item>
+        <item>医学部</item>
+        <item>薬学部</item>
+        <item>工学部</item>
+        <item>芸術文化学部</item>
+        <item>都市デザイン学部</item>
+    </string-array>
+    <string-array name="kyoyo">
+        <item></item>
+    </string-array>
+    <string-array name="jinbun">
+        <item></item>
+    </string-array>
+    <string-array name="jinpatsu">
+        <item></item>
+    </string-array>
+    <string-array name="keizai">
+        <item>経済学科</item>
+        <item>経営学科</item>
+        <item>経営法学科</item>
+    </string-array>
+    <string-array name="rigaku">
+        <item>数学科</item>
+        <item>物理学科</item>
+        <item>化学科</item>
+        <item>生物学科</item>
+        <item>地球科学科</item>
+        <item>生物圏環境科学科</item>
+        <item>自然環境科学科</item>
+    </string-array>
+    <string-array name="igaku">
+        <item>医学科</item>
+        <item>看護学科</item>
+    </string-array>
+    <string-array name="yakugaku">
+        <item>薬科学科</item>
+        <item>薬学科</item>
+        <item>創薬科学科</item>
+    </string-array>
+    <string-array name="kogaku">
+        <item>電気電子システム工学科</item>
+        <item>知能情報工学科</item>
+        <item>機械知能システム工学科</item>
+        <item>物質生命システム工学科</item>
+        <item>生命工学科</item>
+        <item>環境応用化学科</item>
+        <item>材料機能工学科</item>
+        <item>工学科</item>
+        <item>電気電子工学コース</item>
+        <item>知能情報工学コース</item>
+        <item>機械工学コース</item>
+        <item>生命工学コース</item>
+        <item>応用化学コース</item>
+    </string-array>
+    <string-array name="geibun">
+        <item></item>
+    </string-array>
+    <string-array name="toshideza">
+        <item>地球システム科学科</item>
+        <item>都市・交通デザイン学科</item>
+        <item>材料デザイン工学科</item>
+    </string-array>
+    <string-array name="list3">
+        <item>前期</item>
+        <item>後期</item>
+        <item>通年</item>
+        <item>第1ターム</item>
+        <item>第2ターム</item>
+        <item>第3ターム</item>
+    </string-array>
+    <string-array name="list4">
+        <item>1年</item>
+        <item>2年</item>
+        <item>3年</item>
+        <item>4年</item>
+    </string-array>
+    <string-array name="list5">
+        <item>月曜</item>
+        <item>火曜</item>
+        <item>水曜</item>
+        <item>木曜</item>
+        <item>金曜</item>
+        <item>土曜</item>
+    </string-array>
+    <string-array name="list6">
+        <item>１限</item>
+        <item>２限</item>
+        <item>３限</item>
+        <item>４限</item>
+        <item>５限</item>
+        <item>６限</item>
+        <item>７限</item>
+    </string-array>
+
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->

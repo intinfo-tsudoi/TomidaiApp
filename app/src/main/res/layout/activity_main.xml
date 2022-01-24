@@ -42,7 +42,7 @@
         android:layout_marginLeft="150dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/icon_syllabus"
-        android:onClick="onMapButtonTapped"
+        android:onClick="onSyllabusButtonTapped"
         android:scaleType="centerInside"
         android:shadowColor="#3F51B5"
         android:shadowDx="3"

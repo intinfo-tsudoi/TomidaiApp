@@ -102,3 +102,26 @@ class result_nomacth_DialogFragment : DialogFragment() {
         return builder.create()
     }
 }
+
+class search_notext_DialogFragment : DialogFragment() {
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val builder = AlertDialog.Builder(activity)
+        builder.setTitle("検索エラー")
+            .setMessage("何か文字を入力してください")
+            .setNegativeButton("戻る", null)
+        return builder.create()
+    }
+}
+
+class result_404_DialogFragment : DialogFragment() {
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val builder = AlertDialog.Builder(activity)
+        builder.setTitle("404 Not Found")
+            .setMessage("検索結果がありませんでした")
+            .setNegativeButton("戻る"){ dialog, id ->
+                // このボタンを押した時の処理を書きます。
+                Results1().onBackPressed()
+            }
+        return builder.create()
+    }
+}
