@@ -18,6 +18,12 @@
             app:defaultValue="false"
             />
 
+        <Preference
+            app:key="delete_timetable"
+            app:title="時間割の消去"
+            android:summary="登録されている時間割を消去します"
+            />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

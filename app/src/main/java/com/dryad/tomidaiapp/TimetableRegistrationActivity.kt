@@ -23,6 +23,8 @@ class TimetableRegistrationActivity : AppCompatActivity(), check_update_DialogFr
     var text_classregicode = ""
     var text_classname_jp = ""
     var text_classname_en = ""
+    var color_Id = ""
+    var color_Id_int = 1
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,12 +34,10 @@ class TimetableRegistrationActivity : AppCompatActivity(), check_update_DialogFr
         getdata = intent.getStringExtra("id").toString()
         println(getdata)
 
-        var date: String?
-        var time: String?
         var date_str: String? = null
         /* getdataへの処理 */
-        date = getdata.substring(0, 3)
-        time = getdata.substring(3)
+        val date = getdata.substring(0, 3)
+        val time = getdata.substring(3)
         println(date)
         println(time)
 
@@ -58,14 +58,10 @@ class TimetableRegistrationActivity : AppCompatActivity(), check_update_DialogFr
         datetime_str = datetime_str.replace("1","１" ).replace("2","２" ).replace("3","３" ).replace("4","４" ).replace("5","５" ).replace("6","６" ).replace("7","７" )
         println(datetime_str)
 
-        var set_str = "登録する時間：$datetime_str"
+        val set_str = "登録する時間：$datetime_str"
 
-        var datetime_text = findViewById<TextView>(R.id.textView_date_time_timetableRegist)
+        val datetime_text = findViewById<TextView>(R.id.textView_date_time_timetableRegist)
         datetime_text.text = set_str
-
-        // Spinnerの取得
-        //val spinner = findViewById<Spinner>(R.id.spinner1)
-        //val spinner2 = findViewById<Spinner>(R.id.spinner2)
 
     }
 
@@ -74,7 +70,7 @@ class TimetableRegistrationActivity : AppCompatActivity(), check_update_DialogFr
         Log.d("Searched", text_classregicode)
         if(text_classregicode.length == 6) {
             //コルーチンだけど他のスレッドブロックするよ
-            val launch = runBlocking {
+            runBlocking {
                 val mainHandler = Handler(Looper.getMainLooper())
                 val searched: Array<SylalbusforRegist> =
                     AppDatabase.getDatabase_sy(applicationContext).DataBaseDao_sy()
@@ -129,17 +125,18 @@ class TimetableRegistrationActivity : AppCompatActivity(), check_update_DialogFr
         text_classroom = editText_classroom.text.toString()
         text_memo = editText_memo.text.toString()
         text_classregicode = editText_classregicode.text.toString()
+        color_Id = resources.getResourceEntryName(RadioGroup_Color.checkedRadioButtonId)
         if(text_classregicode.length != 6){
             val dialogFragment: DialogFragment = result_inputerror_DialogFragment()
             dialogFragment.show(supportFragmentManager, "result_inputerror_dialog")
         }else{
-            val launch = runBlocking {
+            runBlocking {
                 println(getdata)
                 text_classname_jp = AppDatabase.getDatabase_sy(applicationContext).DataBaseDao_sy()
                     .getClassname_jp(text_classregicode)
                 text_classname_en = AppDatabase.getDatabase_sy(applicationContext).DataBaseDao_sy()
                     .getClassname_en(text_classregicode)
-                if(AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt().check_empty(getdata).isNotEmpty()){
+                if(!AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt().check_empty(getdata).isNullOrBlank()){
                     val dialogFragment: DialogFragment = check_update_DialogFragment()
                     val args = Bundle()
                     args.putString("date_time", datetime_str)
@@ -162,8 +159,25 @@ class TimetableRegistrationActivity : AppCompatActivity(), check_update_DialogFr
         println("NoticeDialogでCancelボタンが押されたよ！")
     }
 
-    public fun set_classdata(){
-        val launch = runBlocking {
+    fun set_classdata(){
+        if(color_Id == "radioButton_red"){
+            color_Id_int = 2
+        }else if(color_Id == "radioButton_pink"){
+            color_Id_int = 3
+        }else if(color_Id == "radioButton_purple"){
+            color_Id_int = 4
+        }else if(color_Id == "radioButton_blue"){
+            color_Id_int = 5
+        }else if(color_Id == "radioButton_green"){
+            color_Id_int = 6
+        }else if(color_Id == "radioButton_yellow"){
+            color_Id_int = 7
+        }else if(color_Id == "radioButton_orange"){
+            color_Id_int = 8
+        }else{
+            color_Id_int = 1
+        }
+        runBlocking {
             val result = AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt()
                 .updateTimetable(
                     getdata,
@@ -173,7 +187,8 @@ class TimetableRegistrationActivity : AppCompatActivity(), check_update_DialogFr
                     text_teacher,
                     text_classregicode,
                     text_classroom,
-                    text_memo
+                    text_memo,
+                    color_Id_int
                 )
             println("clear")
             Log.d("result", "$result")//1だったら適切に１列更新できているはず

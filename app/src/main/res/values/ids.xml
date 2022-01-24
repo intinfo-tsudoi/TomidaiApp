@@ -8,7 +8,7 @@
 
     <item name="input_to_search" type="id"/>
 
-    <item name="editt_tt" type="id"/>
+    <item name="edit_tt" type="id"/>
 
     <item name="Mon1" type="id"/>
     <item name="Mon2" type="id"/>
@@ -45,5 +45,7 @@
     <item name="Fri5" type="id"/>
     <item name="Fri6" type="id"/>
     <item name="Fri7" type="id"/>
+
+    <item name="listView_settings" type="id"/>
 
 </resources>

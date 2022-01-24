@@ -1,14 +1,12 @@
 package com.dryad.tomidaiapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import android.view.View
 import android.widget.Button
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager
 import kotlinx.android.synthetic.main.activity_search_data.*
 import kotlinx.android.synthetic.main.activity_timetable.*
@@ -46,17 +44,16 @@ class TimetableActivity : AppCompatActivity() {
             edit_tt.text = "編集する"
         }
     }
-
+    
     fun setTimeTable(){
-        var id: Int = resources.getIdentifier("Mon1", "id", packageName)
+        var id: Int
         var btn: Button
-        val launch = GlobalScope.launch {
-            val mainHandler = Handler(Looper.getMainLooper())
+        GlobalScope.launch {
             AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt().getAll().forEach {
                 Log.d("MainActivity", "${it.date_time}${it.classname_jp}${it.classname_en}")
                 /*ログに授業名吐き出すよ*/
                 if(!set_timetable_extend){
-                    if(it.date_time!!.contains("6") || it.date_time!!.contains("7")) {
+                    if(it.date_time!!.contains("6") || it.date_time.contains("7")) {
                         return@forEach
                     }
                 }
@@ -69,6 +66,58 @@ class TimetableActivity : AppCompatActivity() {
                     } else if (set_classnamelang == "EN") {
                         btn.text = it.classname_en
                         println(it.classname_en)
+                    }
+                    println(it.color)
+                    when (it.color) {
+                        1 -> {
+                            with(btn) {
+                                setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.white))
+                                setTextColor(ContextCompat.getColor(applicationContext,R.color.black))
+                            }
+                        }
+                        2 -> {
+                            with(btn) {
+                                setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.pastel_red))
+                                setTextColor(ContextCompat.getColor(applicationContext,R.color.white))
+                            }
+                        }
+                        3 -> {
+                            println("３に入ってる")
+                            with(btn) {
+                                setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.pastel_pink))
+                                setTextColor(ContextCompat.getColor(applicationContext,R.color.white))
+                            }
+                        }
+                        4 -> {
+                            with(btn) {
+                                setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.pastel_purple))
+                                setTextColor(ContextCompat.getColor(applicationContext,R.color.white))
+                            }
+                        }
+                        5 -> {
+                            with(btn) {
+                                setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.pastel_blue))
+                                setTextColor(ContextCompat.getColor(applicationContext,R.color.black))
+                            }
+                        }
+                        6 -> {
+                            with(btn) {
+                                setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.pastel_green))
+                                setTextColor(ContextCompat.getColor(applicationContext,R.color.black))
+                            }
+                        }
+                        7 -> {
+                            with(btn) {
+                                setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.pastel_yellow))
+                                setTextColor(ContextCompat.getColor(applicationContext,R.color.black))
+                            }
+                        }
+                        8 -> {
+                            with(btn) {
+                                setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.pastel_orange))
+                                setTextColor(ContextCompat.getColor(applicationContext,R.color.black))
+                            }
+                        }
                     }
                 }
             }
@@ -85,7 +134,7 @@ class TimetableActivity : AppCompatActivity() {
         }else{
             /*授業詳細がでるようにしたい*/
             var classregicode: String
-            val launch = runBlocking {
+            runBlocking {
                 classregicode = AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt().getClassregicode(str_btn_id)
             }
             if(classregicode.isNotEmpty()) {

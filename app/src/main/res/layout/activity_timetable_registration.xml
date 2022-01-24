@@ -81,28 +81,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <!--<Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="205dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:entries="@array/day_list"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="205dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:entries="@array/time_list"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/spinner1"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
-    -->
     <TextView
         android:id="@+id/textView7"
         android:layout_width="match_parent"
@@ -137,6 +115,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="時間割の表示カラー"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_memo" />
+
     <Button
         android:id="@+id/button5"
         android:layout_width="wrap_content"
@@ -150,12 +136,12 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:onClick="TourokuButtonTapped"
         android:text="登録"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_classname" />
+        app:layout_constraintTop_toBottomOf="@+id/RadioGroup_Color" />
 
     <Button
         android:id="@+id/button6"
@@ -168,6 +154,67 @@
         android:text="戻る"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/RadioGroup_Color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9">
+
+        <RadioButton
+            android:id="@+id/radioButton_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/pastel_red"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:id="@+id/radioButton_pink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:buttonTint="@color/pastel_pink"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/radioButton_purple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/pastel_purple"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/radioButton_blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:buttonTint="@color/pastel_blue"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/radioButton_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/pastel_green"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/radioButton_yellow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:buttonTint="@color/pastel_yellow"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/radioButton_orange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:buttonTint="@color/pastel_orange"
+            android:layout_weight="1" />
+
+
+    </RadioGroup>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

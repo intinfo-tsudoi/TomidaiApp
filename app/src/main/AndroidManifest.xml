@@ -41,10 +41,16 @@
             android:name=".ContactActivity"
             android:exported="false" />
         <activity
-            android:name=".CotactActivity"
+            android:name=".FloorActivity"
             android:exported="false" />
         <activity
-            android:name=".FloorActivity"
+            android:name=".AppLicenceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AppInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SettingsAndOtherActivity"
             android:exported="false" />
         <activity
             android:name=".SettingsActivity"

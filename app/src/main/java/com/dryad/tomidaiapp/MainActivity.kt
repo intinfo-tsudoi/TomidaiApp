@@ -6,18 +6,16 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
-import kotlinx.android.synthetic.main.settings_activity.*
 import java.time.LocalDate
 
 /**
@@ -63,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         val date = LocalDate.now()
 
         //通知をシステムに登録しています。
-        var builder = NotificationCompat.Builder(this, channelId)
+        val builder = NotificationCompat.Builder(this, channelId)
             .setSmallIcon(R.drawable.notification_icon)
             .setContentTitle("今日は")
             .setContentText(date.toString()+"です。")
@@ -136,7 +134,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onSettingBtnTapped(view: View?) {
-        val intent = Intent(this, SettingsActivity::class.java)
+        val intent = Intent(this, SettingsAndOtherActivity::class.java)
         startActivities(arrayOf(intent))
     }
 
@@ -151,7 +149,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onTestBtnTapped(view: View){
-        //val intent = Intent(this, SearchData::class.java)
+        //val intent = Intent(this, SettingsAndOtherActivity::class.java)
         //startActivities(arrayOf(intent))
         val dialogFragment = AppDialogFragment()
         dialogFragment.show(supportFragmentManager, "test_dialog")
