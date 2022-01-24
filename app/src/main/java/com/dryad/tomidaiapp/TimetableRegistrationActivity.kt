@@ -23,6 +23,8 @@ class TimetableRegistrationActivity : AppCompatActivity(), check_update_DialogFr
     var text_classregicode = ""
     var text_classname_jp = ""
     var text_classname_en = ""
+    var color_Id = ""
+    var color_Id_int = 1
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -123,6 +125,7 @@ class TimetableRegistrationActivity : AppCompatActivity(), check_update_DialogFr
         text_classroom = editText_classroom.text.toString()
         text_memo = editText_memo.text.toString()
         text_classregicode = editText_classregicode.text.toString()
+        color_Id = resources.getResourceEntryName(RadioGroup_Color.checkedRadioButtonId)
         if(text_classregicode.length != 6){
             val dialogFragment: DialogFragment = result_inputerror_DialogFragment()
             dialogFragment.show(supportFragmentManager, "result_inputerror_dialog")
@@ -157,6 +160,23 @@ class TimetableRegistrationActivity : AppCompatActivity(), check_update_DialogFr
     }
 
     fun set_classdata(){
+        if(color_Id == "radioButton_red"){
+            color_Id_int = 2
+        }else if(color_Id == "radioButton_pink"){
+            color_Id_int = 3
+        }else if(color_Id == "radioButton_purple"){
+            color_Id_int = 4
+        }else if(color_Id == "radioButton_blue"){
+            color_Id_int = 5
+        }else if(color_Id == "radioButton_green"){
+            color_Id_int = 6
+        }else if(color_Id == "radioButton_yellow"){
+            color_Id_int = 7
+        }else if(color_Id == "radioButton_orange"){
+            color_Id_int = 8
+        }else{
+            color_Id_int = 1
+        }
         runBlocking {
             val result = AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt()
                 .updateTimetable(
@@ -167,7 +187,8 @@ class TimetableRegistrationActivity : AppCompatActivity(), check_update_DialogFr
                     text_teacher,
                     text_classregicode,
                     text_classroom,
-                    text_memo
+                    text_memo,
+                    color_Id_int
                 )
             println("clear")
             Log.d("result", "$result")//1だったら適切に１列更新できているはず
