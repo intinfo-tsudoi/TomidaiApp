@@ -8,7 +8,7 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
 
-@Database(entities = [SyllabusDatabase::class, TimetableDatabase::class], version = 2, exportSchema = false)//最終アップデート：2022/01/19
+@Database(entities = [SyllabusDatabase::class, TimetableDatabase::class], version = 3, exportSchema = false)//最終アップデート：2022/01/25
 abstract class AppDatabase: RoomDatabase() {
     abstract fun DataBaseDao_sy(): DataBaseDao_sy
     abstract fun DataBaseDao_tt(): DataBaseDao_tt
@@ -29,6 +29,7 @@ abstract class AppDatabase: RoomDatabase() {
                 )
                     .apply {
                         addMigrations(MIGRATION_sy_1_2)
+                        addMigrations(MIGRATION_sy_2_3)
                     }
                     .createFromAsset("DBsyllabus.db")
                     .build()
@@ -49,6 +50,7 @@ abstract class AppDatabase: RoomDatabase() {
                 )
                     .apply {
                         addMigrations(MIGRATION_tt_1_2)
+                        addMigrations(MIGRATION_tt_2_3)
                     }
                     .createFromAsset("DBtimetable.db")
                     .build()
@@ -73,5 +75,18 @@ val MIGRATION_tt_1_2 = object : Migration(1, 2) {
         database.execSQL("ALTER TABLE Timetable_tbl add classname_jp TEXT DEFAULT null;")
         database.execSQL("ALTER TABLE Timetable_tbl add classname_en TEXT DEFAULT null;")
         println("tt Migration Complete")
+    }
+}
+
+val MIGRATION_sy_2_3 = object : Migration(2, 3) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL("DELETE FROM Timetable_tbl")
+        println("sy Migration Complete")
+    }
+}
+
+val MIGRATION_tt_2_3 = object : Migration(2, 3) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+
     }
 }
