@@ -10,12 +10,12 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:background="@drawable/img_1756"
+        android:background="@drawable/corona"
         android:clickable="true"
         android:contentDescription="@string/img_description"
-        android:onClick="onMapButtonTapped"
+        android:onClick="onP1BtnTapped"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/img_1756" />
+        tools:srcCompat="@drawable/corona" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

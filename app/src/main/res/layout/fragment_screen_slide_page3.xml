@@ -10,12 +10,12 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:background="@drawable/anpic"
+        android:background="@drawable/notices"
         android:clickable="true"
         android:contentDescription="@string/img_description"
-        android:onClick="onP2BtnTapped"
+        android:onClick="onP3BtnTapped"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/anpic" />
+        tools:srcCompat="@drawable/notices" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
