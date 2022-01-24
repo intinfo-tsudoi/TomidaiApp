@@ -53,7 +53,7 @@ class SettingsActivity : AppCompatActivity() {
             GlobalScope.launch {
                 AppDatabase.getDatabase_tt(requireContext()).DataBaseDao_tt().getAll().forEach {
                     Log.d("MainActivity", "${it.date_time}${it.classname_jp}${it.classname_en}")
-                    AppDatabase.getDatabase_tt(requireContext()).DataBaseDao_tt().updateTimetable("${it.date_time}","","","","","","","")
+                    AppDatabase.getDatabase_tt(requireContext()).DataBaseDao_tt().updateTimetable("${it.date_time}","","","","","","","",1)
                 }
             }
         }

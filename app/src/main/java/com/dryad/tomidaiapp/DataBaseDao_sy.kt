@@ -12,7 +12,7 @@ interface DataBaseDao_sy{
     suspend fun getAll(): List<SyllabusDatabase>
     @Query("SELECT * FROM syllabus_tbl WHERE classregicode = :regicode")
     suspend fun SerachByClassregicode(regicode: String): Array<SyllabusDatabase>
-    @Query("SELECT classname, classname_jp, classname_en,teacher, period FROM syllabus_tbl WHERE classregicode = :regicode")
+    @Query("SELECT classname, classname_jp, classname_en, teacher, period FROM syllabus_tbl WHERE classregicode = :regicode")
     suspend fun SearchDataForRegistration(regicode: String): Array<SylalbusforRegist>
     @Query("SELECT classname_jp FROM Syllabus_tbl WHERE classregicode = :regicode")
     suspend fun getClassname_jp(regicode: String): String

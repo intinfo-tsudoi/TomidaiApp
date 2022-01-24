@@ -15,5 +15,6 @@ data class TimetableDatabase(
     @ColumnInfo(name = "teacher") val teacher: String?,
     @ColumnInfo(name = "classregicode") val classregicode: String?,
     @ColumnInfo(name = "classroom") val classroom: String?,
-    @ColumnInfo(name = "memo") val memo: String?
+    @ColumnInfo(name = "memo") val memo: String?,
+    @ColumnInfo(name = "color") val color: Int?
 )

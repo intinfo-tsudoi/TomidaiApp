@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager
 import kotlinx.android.synthetic.main.activity_search_data.*
 import kotlinx.android.synthetic.main.activity_timetable.*
@@ -43,7 +44,7 @@ class TimetableActivity : AppCompatActivity() {
             edit_tt.text = "編集する"
         }
     }
-
+    
     fun setTimeTable(){
         var id: Int
         var btn: Button
@@ -65,6 +66,58 @@ class TimetableActivity : AppCompatActivity() {
                     } else if (set_classnamelang == "EN") {
                         btn.text = it.classname_en
                         println(it.classname_en)
+                    }
+                    println(it.color)
+                    when (it.color) {
+                        1 -> {
+                            with(btn) {
+                                setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.white))
+                                setTextColor(ContextCompat.getColor(applicationContext,R.color.black))
+                            }
+                        }
+                        2 -> {
+                            with(btn) {
+                                setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.pastel_red))
+                                setTextColor(ContextCompat.getColor(applicationContext,R.color.white))
+                            }
+                        }
+                        3 -> {
+                            println("３に入ってる")
+                            with(btn) {
+                                setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.pastel_pink))
+                                setTextColor(ContextCompat.getColor(applicationContext,R.color.white))
+                            }
+                        }
+                        4 -> {
+                            with(btn) {
+                                setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.pastel_purple))
+                                setTextColor(ContextCompat.getColor(applicationContext,R.color.white))
+                            }
+                        }
+                        5 -> {
+                            with(btn) {
+                                setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.pastel_blue))
+                                setTextColor(ContextCompat.getColor(applicationContext,R.color.black))
+                            }
+                        }
+                        6 -> {
+                            with(btn) {
+                                setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.pastel_green))
+                                setTextColor(ContextCompat.getColor(applicationContext,R.color.black))
+                            }
+                        }
+                        7 -> {
+                            with(btn) {
+                                setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.pastel_yellow))
+                                setTextColor(ContextCompat.getColor(applicationContext,R.color.black))
+                            }
+                        }
+                        8 -> {
+                            with(btn) {
+                                setBackgroundColor(ContextCompat.getColor(applicationContext,R.color.pastel_orange))
+                                setTextColor(ContextCompat.getColor(applicationContext,R.color.black))
+                            }
+                        }
                     }
                 }
             }
