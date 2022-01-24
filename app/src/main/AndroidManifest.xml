@@ -17,6 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TomidaiApp">
         <activity
+            android:name=".AppLicenceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AppInfoActivity"
+            android:exported="false" />
+        <activity
             android:name=".SettingsAndOtherActivity"
             android:exported="false" />
         <activity
