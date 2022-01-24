@@ -75,5 +75,6 @@
         <item>JP</item>
         <item>EN</item>
     </string-array>
+    <string name="title_activity_app_lisence">AppLisenceActivity</string>
 
 </resources>
