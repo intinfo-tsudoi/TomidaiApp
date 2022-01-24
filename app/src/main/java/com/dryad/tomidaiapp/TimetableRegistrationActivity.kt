@@ -133,7 +133,7 @@ class TimetableRegistrationActivity : AppCompatActivity(), check_update_DialogFr
                     .getClassname_jp(text_classregicode)
                 text_classname_en = AppDatabase.getDatabase_sy(applicationContext).DataBaseDao_sy()
                     .getClassname_en(text_classregicode)
-                if(AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt().check_empty(getdata).isNotEmpty()){
+                if(!AppDatabase.getDatabase_tt(applicationContext).DataBaseDao_tt().check_empty(getdata).isNullOrBlank()){
                     val dialogFragment: DialogFragment = check_update_DialogFragment()
                     val args = Bundle()
                     args.putString("date_time", datetime_str)
