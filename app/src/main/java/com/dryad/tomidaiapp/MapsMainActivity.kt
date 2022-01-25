@@ -35,22 +35,26 @@ class MapsMainActivity : AppCompatActivity() {
     }
 
     fun onFloorBtnTapped(view: View?) {
-        val intent = Intent(this, FloorActivity::class.java)
-        startActivity(intent)
+        val intent = Intent(this, PDFViewActivity::class.java)
+        intent.putExtra("FILE", "m0gofuku1.pdf")
+        startActivities(arrayOf(intent))
     }
 
     fun onFloorGBtnTapped(view: View?) {
-        val intent = Intent(this, FloorGActivity::class.java)
-        startActivity(intent)
+        val intent = Intent(this, PDFViewActivity::class.java)
+        intent.putExtra("FILE", "m1gofuku2.pdf")
+        startActivities(arrayOf(intent))
     }
 
     fun onFloorSBtnTapped(view: View?) {
-        val intent = Intent(this, FloorSActivity::class.java)
-        startActivity(intent)
+        val intent = Intent(this, PDFViewActivity::class.java)
+        intent.putExtra("FILE", "m2sugitani.pdf")
+        startActivities(arrayOf(intent))
     }
 
     fun onFloorTBtnTapped(view: View?) {
-        val intent = Intent(this, FloorTActivity::class.java)
-        startActivity(intent)
+        val intent = Intent(this, PDFViewActivity::class.java)
+        intent.putExtra("FILE", "m3takaoka.pdf")
+        startActivities(arrayOf(intent))
     }
 }
