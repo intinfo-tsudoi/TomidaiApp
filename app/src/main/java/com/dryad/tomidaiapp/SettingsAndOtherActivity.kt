@@ -6,6 +6,7 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_settings_and_other.*
 
 import android.widget.ArrayAdapter
+import kotlinx.android.synthetic.main.activity_search_data.*
 
 
 class SettingsAndOtherActivity : AppCompatActivity() {
@@ -24,6 +25,8 @@ class SettingsAndOtherActivity : AppCompatActivity() {
             JampActivity(position)
         }
 
+        appIcon.setImageResource(resources.getIdentifier("tomidaiapp_icon", "drawable", packageName))
+
     }
 
     fun JampActivity(position: Int){
@@ -33,7 +36,9 @@ class SettingsAndOtherActivity : AppCompatActivity() {
                 startActivities(arrayOf(intent))
             }
             1 -> {
-                /*googleformを開く*/
+                val intent = Intent(this, WebViewActivity::class.java)
+                intent.putExtra("URL", "https://forms.gle/FNqo8SFQq3bKmHiU8")
+                startActivities(arrayOf(intent))
             }
             2 -> {}
             3 -> {

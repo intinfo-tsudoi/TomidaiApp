@@ -12,11 +12,13 @@ class LinksMainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_links_main)
     }
     fun onMoodleBtnTapped(view: View?) {
-        val intent = Intent(this, MoodleActivity::class.java)
-        startActivity(intent)
+        val intent = Intent(this, WebViewActivity::class.java)
+        intent.putExtra("URL", "https://lms.u-toyama.ac.jp/login/index.php")
+        startActivities(arrayOf(intent))
     }
     fun onHearnBtnTapped(view: View?) {
-        val intent = Intent(this, HearnActivity::class.java)
-        startActivity(intent)
+        val intent = Intent(this, WebViewActivity::class.java)
+        intent.putExtra("URL", "https://www.t-gakujo.adm.u-toyama.ac.jp/campusweb/campusportal.do")
+        startActivities(arrayOf(intent))
     }
 }

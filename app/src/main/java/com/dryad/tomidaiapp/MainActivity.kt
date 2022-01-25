@@ -106,15 +106,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onP1BtnTapped(view: View){
-        val intent = Intent(this, P1Activity::class.java)
+        val intent = Intent(this, WebViewActivity::class.java)
+        intent.putExtra("URL", "https://www.u-toyama.ac.jp/news-topics/15857/")
         startActivities(arrayOf(intent))
     }
     fun onP2BtnTapped(view: View){
-        val intent = Intent(this, P2Activity::class.java)
+        val intent = Intent(this, WebViewActivity::class.java)
+        intent.putExtra("URL", "https://www.u-toyama.ac.jp/anpic/")
         startActivities(arrayOf(intent))
     }
     fun onP3BtnTapped(view: View){
-        val intent = Intent(this, P3Activity::class.java)
+        val intent = Intent(this, WebViewActivity::class.java)
+        intent.putExtra("URL", "https://www.u-toyama.ac.jp/student/")
         startActivities(arrayOf(intent))
     }
 
@@ -134,8 +137,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onBusBtnTapped(view: View?) {
-        val intent = Intent(this, BusActivity::class.java)
-        startActivity(intent)
+        val intent = Intent(this, WebViewActivity::class.java)
+        intent.putExtra("URL", "https://www.u-toyama.ac.jp/studentsupport/student-support/shuttle_bus/")
+        startActivities(arrayOf(intent))
     }
 
     fun onSettingBtnTapped(view: View?) {
