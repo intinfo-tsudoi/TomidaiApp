@@ -38,4 +38,19 @@ class MapsMainActivity : AppCompatActivity() {
         val intent = Intent(this, FloorActivity::class.java)
         startActivity(intent)
     }
+
+    fun onFloorGBtnTapped(view: View?) {
+        val intent = Intent(this, FloorGActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun onFloorSBtnTapped(view: View?) {
+        val intent = Intent(this, FloorSActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun onFloorTBtnTapped(view: View?) {
+        val intent = Intent(this, FloorTActivity::class.java)
+        startActivity(intent)
+    }
 }
