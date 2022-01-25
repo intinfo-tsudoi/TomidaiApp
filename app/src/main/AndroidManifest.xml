@@ -18,6 +18,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TomidaiApp">
         <activity
+            android:name=".FloorTActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FloorSActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FloorGActivity"
+            android:exported="false" />
+        <activity
             android:name=".P3Activity"
             android:exported="false" />
         <activity
@@ -28,9 +37,6 @@
             android:exported="false"
             android:label="@string/title_activity_p1"
             android:theme="@style/Theme.TomidaiApp.NoActionBar" />
-        <activity
-            android:name=".ScreenSlidePageFragment3"
-            android:exported="false" />
         <activity
             android:name=".MoodleActivity"
             android:exported="false" />
@@ -80,6 +86,9 @@
             android:value="@string/google_maps_key" />
 
         <activity
+            android:name=".ScreenSlidePageFragment3"
+            tools:ignore="Instantiatable" />
+        <activity
             android:name=".ScreenSlidePageFragment2"
             tools:ignore="Instantiatable" />
         <activity
@@ -90,7 +99,6 @@
         <activity android:name=".MapsTakaokaActivity" />
         <activity android:name=".MapsMainActivity" />
         <activity android:name=".SubActivity" />
-
         <activity
             android:name=".Results1"
             android:exported="false" />
@@ -104,11 +112,10 @@
             android:name=".Search1"
             android:exported="false"
             android:label="@string/title_activity_view_data"
-            android:theme="@style/Theme.TomidaiApp.NoActionBar"/>
+            android:theme="@style/Theme.TomidaiApp.NoActionBar" />
         <activity
             android:name=".SearchActivity"
             android:exported="false" />
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

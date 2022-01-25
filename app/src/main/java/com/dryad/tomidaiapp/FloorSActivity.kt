@@ -6,15 +6,15 @@ import android.view.View
 import com.joanzapata.pdfview.PDFView
 
 
-class FloorActivity : AppCompatActivity() {
+class FloorSActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_floor)
+        setContentView(R.layout.activity_floor_g_activity)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val pdfView: PDFView = findViewById<View>(R.id.pdfview) as PDFView
-        pdfView.fromAsset("m0gofuku1.pdf")
+        pdfView.fromAsset("m2sugitani.pdf")
             .enableSwipe(true) //スワイプオンオフ
             .swipeVertical(false) //縦スクロールでページ切り替え
             .showMinimap(true)
